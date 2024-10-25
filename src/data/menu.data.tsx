@@ -128,4 +128,34 @@ export const CatalogDummy = [
     item_price: 23000,
     item_photo: [],
   },
+  {
+    id: 10,
+    item_name: "Wallpaper 10",
+    item_disc: 0,
+    item_desc: "Lorem ipsum dolor sit amet adisplicing",
+    item_price: 12000,
+    item_photo: [
+      "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
+    ],
+  },
+  {
+    id: 11,
+    item_name: "Wallpaper 11",
+    item_disc: 0,
+    item_desc: "Lorem ipsum dolor sit amet adisplicing",
+    item_price: 14000,
+    item_photo: [
+      "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
+    ],
+  },
+  {
+    id: 12,
+    item_name: "Wallpaper 12",
+    item_disc: 500,
+    item_desc: "Lorem ipsum dolor sit amet adisplicing",
+    item_price: 16000,
+    item_photo: [
+      "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
+    ],
+  },
 ];

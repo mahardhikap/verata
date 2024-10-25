@@ -13,6 +13,7 @@ module.exports = withMT({
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        philosopher: ["Philosopher", "sans-serif"],
       },
       colors: {
         premium: "#c5ac83",

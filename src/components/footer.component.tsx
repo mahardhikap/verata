@@ -12,7 +12,7 @@ const FooterPage: React.FC = () => {
     <div className="bg-second px-3">
       <div className="text-[#c5ac83] grid grid-cols-2 md:grid-cols-4 gap-5 py-10 container mx-auto">
         <div className="flex flex-col gap-2">
-          <div className="text-lg md:text-base font-semibold text-premium">
+          <div className="text-lg md:text-base font-semibold text-premium font-philosopher">
             About
           </div>
           {/* <div className="flex justify-center items-center">
@@ -31,7 +31,7 @@ const FooterPage: React.FC = () => {
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base">Information</div>
+          <div className="font-semibold text-lg md:text-base font-philosopher">Information</div>
           <div>
             <div className="text-base md:text-sm">Products</div>
             <div className="text-base md:text-sm">Carrer</div>
@@ -40,13 +40,13 @@ const FooterPage: React.FC = () => {
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base">For Business</div>
+          <div className="font-semibold text-lg md:text-base font-philosopher">For Business</div>
           <div className="text-base md:text-sm">
             <p className="break-words">0878-7878-0251</p>
             <p className="break-words">veratadesign@yahoo.com</p>
           </div>
           <div className="flex flex-col justify-center gap-2">
-            <div className="font-semibold text-lg md:text-base">Follow us</div>
+            <div className="font-semibold text-lg md:text-base font-philosopher">Follow us</div>
             <div className="flex flex-row gap-5">
               <a
                 href="https://www.instagram.com/veratawallpapergordynjogja/"
@@ -66,7 +66,7 @@ const FooterPage: React.FC = () => {
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base">Store</div>
+          <div className="font-semibold text-lg md:text-base font-philosopher">Store</div>
           <div>
             <div className="text-base md:text-sm break-words text-justify">
               Km 8, Jl. Magelang No.5, Mlati Glondong, Sendangadi, Mlati, Sleman

@@ -23,7 +23,7 @@ const CatalogPage: React.FC = () => {
               setOpenFilterCategory(!openFilterCategory);
             }}
           >
-            <div className="text-lg font-semibold">Filter</div>
+            <div className="text-lg font-semibold font-philosopher">Filter</div>
             {openFilterCategory ? (
               <IoIosArrowDropup size={30} />
             ) : (
@@ -59,7 +59,7 @@ const CatalogPage: React.FC = () => {
         </div>
         <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
           <div className=" w-full flex justify-between items-center text-premium relative">
-            <div className="text-lg font-semibold">List Products</div>
+            <div className="text-lg font-semibold font-philosopher">List Products</div>
             <SearchCatalog/>
             <FaFilter size={24} onClick={()=>{setOpenFilterList(!openFilterList)}} className="cursor-pointer"/>
             {

@@ -1,17 +1,17 @@
 import PageContainer from "@/containers/page.container";
 import HallVerata from "../assets/images/hall-verata.jpg";
 import Image from "next/image";
-import CatalogCard from "@/components/home/catalog-card-home.component";
 import { CatalogDummy } from "@/data/menu.data";
 import { useRouter } from "next/router";
+import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 
 export default function Home() {
   const router = useRouter();
   return (
     <PageContainer>
-      <div className="grid md:grid-cols-2 gap-5 container mx-auto">
-        <div className="flex flex-col justify-center items-center order-2 md:order-1 w-full md:w-4/5 lg:w-3/4">
-          <div className="text-3xl text-premium w-full font-semibold">
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
+        <div className="flex flex-col justify-center items-center order-2 md:order-1">
+          <div className="text-3xl bg-gradient-to-br from-premium to-second bg-clip-text text-transparent w-full font-semibold font-philosopher">
             Keindahan Interior dan Eksterior Premium Dimulai di Sini.
           </div>
           <div className="text-justify text-lg md:text-lg text-premium mt-5">
@@ -28,27 +28,29 @@ export default function Home() {
             alt="hall-image"
             width={1000}
             height={1000}
-            className="rounded-2xl border-2 border-premium object-cover aspect-square"
+            className="rounded-2xl object-cover aspect-square"
           />
         </div>
       </div>
       <div className="container mx-auto">
-        <div className="font-semibold text-2xl md:text-lg text-premium text-center my-10">
+        <div className="font-semibold text-2xl text-premium text-center my-10 font-philosopher">
           Catalog
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {CatalogDummy?.slice(0, 6)?.map((item, i) => {
             return (
-              <CatalogCard
+              <CatalogCardPage
                 item_name={item.item_name}
                 key={i}
                 item_photo={item.item_photo}
+                item_disc={item.item_disc}
+                item_price={item.item_price}
               />
             );
           })}
         </div>
         <div
-          className="col-span-2 lg:col-span-3 text-center font-semibold text-2xl md:text-lg text-premium cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 my-10"
+          className="col-span-2 lg:col-span-3 text-center font-semibold text-2xl text-premium cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 my-10 font-philosopher"
           onClick={() => router.push("/catalog")}
         >
           More Products?

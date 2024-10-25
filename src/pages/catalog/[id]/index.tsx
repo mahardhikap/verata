@@ -57,7 +57,7 @@ const DetailCatalog: React.FC = () => {
           </div>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
-          <div className="font-semibold text-xl">{filterData?.item_name}</div>
+          <div className="font-semibold text-xl text-premium">{filterData?.item_name}</div>
           <div className="text-sm mt-5 text-justify">{filterData?.item_desc}</div>
         </div>
       </div>

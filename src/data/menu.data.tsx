@@ -4,6 +4,17 @@ export const HeaderMenu = [
     url_menu: "/catalog",
   },
   {
+    label: "About",
+    url_menu: "/about",
+  },
+  {
+    label: "Article",
+    url_menu: "/article",
+  },
+];
+
+export const CategoryProduct = [
+  {
     label: "Wallpaper",
     url_menu: "#",
   },
@@ -35,7 +46,7 @@ export const HeaderMenu = [
     label: "Blinds",
     url_menu: "#",
   },
-];
+]
 
 export const CatalogDummy = [
   {

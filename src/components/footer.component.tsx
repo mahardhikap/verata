@@ -1,6 +1,4 @@
 import React from "react";
-// import Image from "next/image";
-// import verata from "../assets/icons/verata.jpg";
 import {
   FaSquareFacebook,
   FaSquareInstagram,
@@ -10,28 +8,26 @@ import {
 const FooterPage: React.FC = () => {
   return (
     <div className="bg-premium px-3">
-      <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 py-10 container mx-auto">
-        <div className="flex flex-col gap-2">
+      <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 py-5 container mx-auto">
+        <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
           <div className="text-lg md:text-base font-semibold font-philosopher">
-            About
+            ABOUT
           </div>
-          {/* <div className="flex justify-center items-center">
-            <Image
-              src={verata}
-              alt="verata-icons"
-              width={150}
-              height={150}
-              className="w-3/12 sm:2/12 md:w-1/2 xl:w-1/3"
-            />
-          </div> */}
-          <div className="text-justify text-sm">
-            Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan
-            eksterior Anda. Kami menawarkan koleksi wallpaper impor ready stock
-            terlengkap untuk memperindah ruang Anda.
+          <div className="text-sm">
+            Verata Wallpaper Jogja menawarkan kualitas impor kebutuhan interior dan eksterior untuk memperindah ruang Anda.
+          </div>
+        </div>
+        <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">
+          <div className="font-semibold text-lg md:text-base font-philosopher">STORE</div>
+          <div>
+            <div className="text-sm break-words">
+              Km 8, Jl. Magelang No.5, Mlati Glondong, Sendangadi, Mlati, Sleman
+              Regency, Special Region of Yogyakarta 55285
+            </div>
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base font-philosopher">Information</div>
+          <div className="font-semibold text-lg md:text-base font-philosopher">INFORMATION</div>
           <div>
             <div className="text-sm">Products</div>
             <div className="text-sm">Carrer</div>
@@ -40,13 +36,13 @@ const FooterPage: React.FC = () => {
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base font-philosopher">For Business</div>
+          <div className="font-semibold text-lg md:text-base font-philosopher">BUSINESS</div>
           <div className="text-sm">
             <p className="break-words">0878-7878-0251</p>
             <p className="break-words">veratadesign@yahoo.com</p>
           </div>
           <div className="flex flex-col justify-center gap-2">
-            <div className="font-semibold text-lg md:text-base font-philosopher">Follow us</div>
+            <div className="font-semibold text-lg md:text-base font-philosopher">FOLLOW US</div>
             <div className="flex flex-row gap-5">
               <a
                 href="https://www.instagram.com/veratawallpapergordynjogja/"
@@ -65,15 +61,7 @@ const FooterPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="h-full flex flex-col gap-2">
-          <div className="font-semibold text-lg md:text-base font-philosopher">Store</div>
-          <div>
-            <div className="text-sm break-words text-justify">
-              Km 8, Jl. Magelang No.5, Mlati Glondong, Sendangadi, Mlati, Sleman
-              Regency, Special Region of Yogyakarta 55285
-            </div>
-          </div>
-        </div>
+        <div className="text-center col-span-2 md:col-span-4 font-semibold font-philosopher">&#169; 2024 by Verata. All Rights Reserved</div>
       </div>
     </div>
   );

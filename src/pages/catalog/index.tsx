@@ -8,6 +8,7 @@ import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import { Checkbox, Typography } from "@material-tailwind/react";
 import SearchCatalog from "@/components/atomic/search-catalog";
 import { FaArrowDownAZ, FaArrowUpAZ } from "react-icons/fa6";
+import { CategoryProduct } from "@/data/menu.data";
 
 const CatalogPage: React.FC = () => {
   const [openFilterCategory, setOpenFilterCategory] = useState<boolean>(true);
@@ -38,7 +39,7 @@ const CatalogPage: React.FC = () => {
                 : "h-0 opacity-0 translate-y-[-30px]"
             } overflow-hidden`}
           >
-            {HeaderMenu?.map((item, i) => {
+            {CategoryProduct?.map((item, i) => {
               return (
                 <div
                   className="pe-3 bg-main md:bg-transparent rounded-2xl w-fit"

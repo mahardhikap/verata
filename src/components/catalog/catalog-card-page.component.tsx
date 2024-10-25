@@ -1,16 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import { CardProps } from "@/interfaces/catalog-card.interface";
+import { useRouter } from "next/router";
 
 const CatalogCardPage: React.FC<CardProps> = ({
   item_name,
   item_photo,
   item_price,
-  item_disc
+  item_disc,
+  id
 }) => {
+  const router = useRouter()
   return (
     <div
       className="w-full bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer"
+      onClick={()=>router.push(`/catalog/${id}`)}
     >
       {item_price !== undefined &&
         item_disc !== undefined &&

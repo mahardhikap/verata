@@ -46,7 +46,7 @@ const CatalogPage: React.FC = () => {
                 >
                   <Checkbox
                     label={
-                      <Typography className="text-white md:text-second text-sm p-0 m-0 md:font-semibold">
+                      <Typography className="text-white md:text-second text-xs p-0 m-0 md:font-semibold">
                         {item.label}
                       </Typography>
                     }
@@ -77,6 +77,7 @@ const CatalogPage: React.FC = () => {
                   item_photo={item.item_photo}
                   item_disc={item.item_disc}
                   item_price={item.item_price}
+                  id={i}
                 />
               );
             })}

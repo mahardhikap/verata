@@ -24,7 +24,7 @@ const FooterPage: React.FC = () => {
               className="w-3/12 sm:2/12 md:w-1/2 xl:w-1/3"
             />
           </div> */}
-          <div className="text-justify text-base md:text-sm">
+          <div className="text-justify text-sm">
             Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan
             eksterior Anda. Kami menawarkan koleksi wallpaper impor ready stock
             terlengkap untuk memperindah ruang Anda.
@@ -33,15 +33,15 @@ const FooterPage: React.FC = () => {
         <div className="h-full flex flex-col gap-2">
           <div className="font-semibold text-lg md:text-base font-philosopher">Information</div>
           <div>
-            <div className="text-base md:text-sm">Products</div>
-            <div className="text-base md:text-sm">Carrer</div>
-            <div className="text-base md:text-sm">FAQs</div>
-            <div className="text-base md:text-sm">Law Certificate</div>
+            <div className="text-sm">Products</div>
+            <div className="text-sm">Carrer</div>
+            <div className="text-sm">FAQs</div>
+            <div className="text-sm">Law Certificate</div>
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
           <div className="font-semibold text-lg md:text-base font-philosopher">For Business</div>
-          <div className="text-base md:text-sm">
+          <div className="text-sm">
             <p className="break-words">0878-7878-0251</p>
             <p className="break-words">veratadesign@yahoo.com</p>
           </div>
@@ -68,7 +68,7 @@ const FooterPage: React.FC = () => {
         <div className="h-full flex flex-col gap-2">
           <div className="font-semibold text-lg md:text-base font-philosopher">Store</div>
           <div>
-            <div className="text-base md:text-sm break-words text-justify">
+            <div className="text-sm break-words text-justify">
               Km 8, Jl. Magelang No.5, Mlati Glondong, Sendangadi, Mlati, Sleman
               Regency, Special Region of Yogyakarta 55285
             </div>

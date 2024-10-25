@@ -11,7 +11,7 @@ export default function Home() {
     <PageContainer>
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
         <div className="flex flex-col justify-center items-center order-2 md:order-1">
-          <div className="text-3xl bg-gradient-to-br from-premium to-second bg-clip-text text-transparent w-full font-semibold font-philosopher">
+          <div className="text-3xl xl:text-4xl bg-gradient-to-br from-premium to-second bg-clip-text text-transparent w-full font-semibold font-philosopher">
             Keindahan Interior dan Eksterior Premium Dimulai di Sini.
           </div>
           <div className="text-justify text-lg md:text-lg text-premium mt-5">
@@ -28,7 +28,7 @@ export default function Home() {
             alt="hall-image"
             width={1000}
             height={1000}
-            className="rounded-2xl object-cover aspect-square"
+            className="rounded-tl-3xl rounded-br-3xl border border-premium object-cover aspect-square"
           />
         </div>
       </div>
@@ -45,6 +45,7 @@ export default function Home() {
                 item_photo={item.item_photo}
                 item_disc={item.item_disc}
                 item_price={item.item_price}
+                id={i}
               />
             );
           })}

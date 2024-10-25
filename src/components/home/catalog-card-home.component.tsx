@@ -8,7 +8,7 @@ const CatalogCard: React.FC<CardProps> = ({
 }) => {
   return (
     <>
-      <div className="h-48 w-full bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer">
+      <div className="aspect-square bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer">
       {item_photo && item_photo.length > 0 ? (
         <Image
           src={item_photo[0]}

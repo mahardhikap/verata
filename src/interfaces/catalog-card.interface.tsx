@@ -5,7 +5,4 @@ export interface CardProps {
   item_desc?: string;
   item_price?: number;
   item_photo?: string[];
-  setOpenPopup?: React.Dispatch<React.SetStateAction<boolean>>;
-  openPopup?:boolean
-  onClick?: () => void;
 }

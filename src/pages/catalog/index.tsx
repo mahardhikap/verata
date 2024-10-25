@@ -7,21 +7,11 @@ import { CatalogDummy, HeaderMenu } from "@/data/menu.data";
 import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import { Checkbox, Typography } from "@material-tailwind/react";
 import FilterOrder from "@/components/atomic/filter-order";
-import SearchCatalog from "@/components/atomic/search-catalog";;
-import PopupCatalog from "@/components/atomic/popup-catalog";
-import { CardProps } from "@/interfaces/catalog-card.interface";
+import SearchCatalog from "@/components/atomic/search-catalog";
 
 const CatalogPage: React.FC = () => {
   const [openFilterCategory, setOpenFilterCategory] = useState<boolean>(true);
   const [openFilterList, setOpenFilterList] = useState<boolean>(false);
-  const [openPopup, setOpenPopup] = useState<boolean>(false);
-  const [itemSelected, setItemSelected] = useState<CardProps>();
-
-  const handleSetSelected = (item: CardProps) => {
-    console.log('isi item', item)
-    setItemSelected(item);
-    setOpenPopup(true);
-  };
   
   return (
     <PageContainer>
@@ -87,9 +77,6 @@ const CatalogPage: React.FC = () => {
                   item_photo={item.item_photo}
                   item_disc={item.item_disc}
                   item_price={item.item_price}
-                  setOpenPopup={setOpenPopup}
-                  openPopup={openPopup}
-                  onClick={() => handleSetSelected(item)}
                 />
               );
             })}
@@ -99,7 +86,6 @@ const CatalogPage: React.FC = () => {
       <div className="my-10 flex justify-center items-center">
         <Pagination />
       </div>
-      <PopupCatalog setOpenPopup={setOpenPopup} openPopup={openPopup} item_photo={itemSelected?.item_photo} item_name={itemSelected?.item_name} item_desc={itemSelected?.item_desc} item_price={itemSelected?.item_price} item_disc={itemSelected?.item_disc}/>
     </PageContainer>
   );
 };

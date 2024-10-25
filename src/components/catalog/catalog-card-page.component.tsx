@@ -6,13 +6,11 @@ const CatalogCardPage: React.FC<CardProps> = ({
   item_name,
   item_photo,
   item_price,
-  item_disc,
-  onClick,
+  item_disc
 }) => {
   return (
     <div
-      className="h-48 w-full bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer"
-      onClick={onClick}
+      className="w-full bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer"
     >
       {item_price !== undefined &&
         item_disc !== undefined &&
@@ -28,10 +26,10 @@ const CatalogCardPage: React.FC<CardProps> = ({
           width={350}
           height={350}
           alt="catalog-item"
-          className="object-cover h-full w-full"
+          className="object-cover h-full w-full aspect-square"
         />
       ) : (
-        <div className="h-full w-full flex items-center justify-center">
+        <div className="h-full w-full flex items-center justify-center aspect-square">
           <div className="text-gray-500 text-center">No Image Available</div>
         </div>
       )}

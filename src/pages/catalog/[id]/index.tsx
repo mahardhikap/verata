@@ -52,8 +52,8 @@ const DetailCatalog: React.FC = () => {
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 flex items-center justify-center md:justify-end">
-          <div className="font-bold px-3 py-2 rounded-2xl bg-green-400 w-10/12 md:w-1/2 lg:w-1/3 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300" onClick={()=>handleOrderClick(filterData?.item_name)}>
-            ORDER
+          <div className="font-bold px-3 py-2 rounded-2xl bg-premium w-10/12 md:w-1/2 lg:w-1/3 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300" onClick={()=>handleOrderClick(filterData?.item_name)}>
+            CHECKOUT
           </div>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">

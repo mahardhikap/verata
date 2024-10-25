@@ -11,10 +11,10 @@ export default function Home() {
     <PageContainer>
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
         <div className="flex flex-col justify-center items-center order-2 md:order-1">
-          <div className="text-3xl xl:text-4xl bg-gradient-to-br from-premium to-second bg-clip-text text-transparent w-full font-semibold font-philosopher">
+          <div className="text-3xl xl:text-4xl text-premium w-full font-normal font-philosopher">
             Keindahan Interior dan Eksterior Premium Dimulai di Sini.
           </div>
-          <div className="text-justify text-lg md:text-lg text-premium mt-5">
+          <div className="text-justify text-base sm:text-lg text-premium mt-5">
             <strong>Verata Wallpaper Jogja</strong> adalah penyedia kebutuhan
             interior dan eksterior Anda. Kami menawarkan koleksi wallpaper impor
             ready stock terlengkap untuk memperindah ruang Anda. Alamat kami di
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container mx-auto">
-        <div className="font-semibold text-2xl text-premium text-center my-10 font-philosopher">
+        <div className="font-normal text-2xl text-premium text-center my-10 font-philosopher">
           Catalog
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
@@ -51,7 +51,7 @@ export default function Home() {
           })}
         </div>
         <div
-          className="col-span-2 lg:col-span-3 text-center font-semibold text-2xl text-premium cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 my-10 font-philosopher"
+          className="col-span-2 lg:col-span-3 text-center font-normal text-2xl text-premium cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 my-10 font-philosopher"
           onClick={() => router.push("/catalog")}
         >
           More Products?

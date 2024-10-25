@@ -22,7 +22,7 @@ const Pagination: React.FC = () => {
           </svg>
         </button>
 
-        <p className="text-premium">
+        <p className="text-premium font-philosopher">
           Page <strong>1</strong> of&nbsp;
           <strong>10</strong>
         </p>

@@ -23,7 +23,7 @@ const HeaderPage: React.FC = () => {
         <div className="hidden lg:flex flex-row items-center flex-wrap gap-3 ms-20 my-5 text-premium">
           {HeaderMenu?.map((item, i) => (
             <div
-              className="cursor-pointer hover:bg-second rounded-xl text-sm px-2 py-1"
+              className="cursor-pointer hover:bg-premium rounded-xl text-sm px-2 py-1 hover:text-main"
               key={i}
               onClick={() => router.push(item.url_menu)}
             >

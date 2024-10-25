@@ -9,10 +9,10 @@ import {
 
 const FooterPage: React.FC = () => {
   return (
-    <div className="bg-second px-3">
-      <div className="text-[#c5ac83] grid grid-cols-2 md:grid-cols-4 gap-5 py-10 container mx-auto">
+    <div className="bg-premium px-3">
+      <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 py-10 container mx-auto">
         <div className="flex flex-col gap-2">
-          <div className="text-lg md:text-base font-semibold text-premium font-philosopher">
+          <div className="text-lg md:text-base font-semibold font-philosopher">
             About
           </div>
           {/* <div className="flex justify-center items-center">

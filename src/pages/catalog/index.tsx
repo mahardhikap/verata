@@ -6,13 +6,13 @@ import Pagination from "@/components/atomic/pagination";
 import { CatalogDummy, HeaderMenu } from "@/data/menu.data";
 import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import { Checkbox, Typography } from "@material-tailwind/react";
-import FilterOrder from "@/components/atomic/filter-order";
 import SearchCatalog from "@/components/atomic/search-catalog";
+import { FaArrowDownAZ, FaArrowUpAZ } from "react-icons/fa6";
 
 const CatalogPage: React.FC = () => {
   const [openFilterCategory, setOpenFilterCategory] = useState<boolean>(true);
   const [openFilterList, setOpenFilterList] = useState<boolean>(false);
-  
+
   return (
     <PageContainer>
       <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto">
@@ -41,16 +41,16 @@ const CatalogPage: React.FC = () => {
             {HeaderMenu?.map((item, i) => {
               return (
                 <div
-                  className="pe-3 bg-second md:bg-transparent rounded-2xl w-fit"
+                  className="pe-3 bg-main md:bg-transparent rounded-2xl w-fit"
                   key={i}
                 >
                   <Checkbox
                     label={
-                      <Typography className="text-white md:text-second text-xs p-0 m-0 md:font-semibold">
+                      <Typography className="text-white md:text-main text-xs p-0 m-0 md:font-semibold">
                         {item.label}
                       </Typography>
                     }
-                    className="border-white md:border-second h-4 w-4 p-0 m-0"
+                    className="border-white md:border-main h-4 w-4 p-0 m-0"
                   />
                 </div>
               );
@@ -59,14 +59,25 @@ const CatalogPage: React.FC = () => {
         </div>
         <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
           <div className=" w-full flex justify-between items-center text-premium relative">
-            <div className="text-lg font-semibold font-philosopher">List Products</div>
-            <SearchCatalog/>
-            <FaFilter size={24} onClick={()=>{setOpenFilterList(!openFilterList)}} className="cursor-pointer"/>
-            {
-              openFilterList && (
-                <FilterOrder/>
-              )
-            }
+            <div className="text-lg font-semibold font-philosopher">
+              List Products
+            </div>
+            <SearchCatalog />
+
+            <div className="flex flex-row items-center">
+              {openFilterList ? (
+                <FaArrowUpAZ size={20} />
+              ) : (
+                <FaArrowDownAZ size={20} />
+              )}
+              <FaFilter
+                size={24}
+                onClick={() => {
+                  setOpenFilterList(!openFilterList);
+                }}
+                className="cursor-pointer"
+              />
+            </div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
             {CatalogDummy?.map((item, i) => {

@@ -25,7 +25,7 @@ export default function Home() {
           property="og:description"
           content="Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan eksterior Anda dengan koleksi produk kualitas impor."
         />
-        <meta property="og:image" content="/verata-og.jpg" />
+        <meta property="og:image" content="https://res.cloudinary.com/dxao06apr/image/upload/v1729950357/dont%20delete%20before%20check/ssyk2vjb7yyvi5bv7sfg.jpg" />
         <meta property="og:url" content={router.asPath} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />

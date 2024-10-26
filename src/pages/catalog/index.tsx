@@ -3,7 +3,7 @@ import PageContainer from "@/containers/page.container";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 import { FaFilter } from "react-icons/fa6";
 import Pagination from "@/components/atomic/pagination";
-import { CatalogDummy, HeaderMenu } from "@/data/menu.data";
+import { CatalogDummy } from "@/data/menu.data";
 import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import { Checkbox, Typography } from "@material-tailwind/react";
 import SearchCatalog from "@/components/atomic/search-catalog";
@@ -42,7 +42,7 @@ const CatalogPage: React.FC = () => {
             {CategoryProduct?.map((item, i) => {
               return (
                 <div
-                  className="pe-3 bg-main md:bg-transparent rounded-2xl w-fit"
+                  className="pe-3 bg-third md:bg-transparent rounded-2xl w-fit"
                   key={i}
                 >
                   <Checkbox

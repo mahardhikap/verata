@@ -18,6 +18,7 @@ module.exports = withMT({
       colors: {
         premium: "#c5ac83",
         second: "#5a4e3b",
+        third: "#312b2b",
         main: "#201d1e",
       },
       boxShadow: {

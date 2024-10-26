@@ -12,7 +12,7 @@ export default function Home() {
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
         <div className="flex flex-col justify-center items-center">
           <div className="text-premium text-center md:text-start text-3xl xl:text-4xl w-full font-normal font-philosopher mb-5">
-            KEINDAHAN INTERIOR DAN EKSTERIOR PREMIUM DIMULAI DI SINI.
+            INTERIOR DAN EKSTERIOR PREMIUM.
           </div>
           <div className="text-premium text-center md:text-start text-base sm:text-lg">
             <strong>Verata Wallpaper Jogja</strong> adalah penyedia kebutuhan
@@ -33,11 +33,11 @@ export default function Home() {
         </div>
       </div>
       <div className="container mx-auto">
-        <div className="font-normal text-2xl text-premium text-center mt-10 font-philosopher">
+        <div className="font-semibold text-2xl text-premium text-center mt-10 font-philosopher">
           CATALOG
         </div>
         <div className="text-premium text-center text-base sm:text-lg mb-5">
-          Koleksi wallpaper kualitas impor.
+          Koleksi produk kualitas impor.
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {CatalogDummy?.slice(0, 6)?.map((item, i) => {

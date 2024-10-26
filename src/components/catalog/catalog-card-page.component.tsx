@@ -4,29 +4,31 @@ import { CardProps } from "@/interfaces/catalog-card.interface";
 import { useRouter } from "next/router";
 
 const CatalogCardPage: React.FC<CardProps> = ({
-  item_name,
-  item_photo,
-  item_price,
-  item_disc,
-  id
+  product,
+  image,
+  price,
+  disc,
+  id,
+  stock,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div
       className="w-full bg-gray-300 border border-premium relative rounded-tl-2xl rounded-br-2xl overflow-hidden cursor-pointer"
-      onClick={()=>router.push(`/catalog/${id}`)}
+      onClick={() => router.push(`/catalog/${id}`)}
     >
-      {item_price !== undefined &&
-        item_disc !== undefined &&
-        item_price > 0 &&
-        item_disc > 0 && (
-          <div className="bg-red-400 absolute p-2 text-xs w-1/4 text-center rounded-br-2xl font-semibold">
-            Disc {((item_disc / item_price) * 100).toFixed(0)}%
-          </div>
-        )}
-      {item_photo && item_photo.length > 0 ? (
+      {price !== undefined && disc !== undefined && price > 0 && disc > 0 && (
+        <div className="bg-red-400 absolute p-2 text-xs w-1/4 text-center rounded-br-2xl font-semibold">
+          Disc {((disc / price) * 100).toFixed(0)}%
+        </div>
+      )}
+      {!stock && <div className="px-3 py-2 font-semibold flex flex-col items-center justify-center aspect-square text-center text-xs rounded-2xl absolute bg-gray-800 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div>STOCK</div>
+        <div>OUT</div>
+      </div>}
+      {image && image.length > 0 ? (
         <Image
-          src={item_photo[0]}
+          src={image[0]}
           width={350}
           height={350}
           alt="catalog-item"
@@ -39,7 +41,7 @@ const CatalogCardPage: React.FC<CardProps> = ({
       )}
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
       <span className="absolute bottom-0 z-5 text-white p-3 truncate w-full">
-        {item_name}
+        {product}
       </span>
     </div>
   );

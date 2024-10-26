@@ -74,12 +74,13 @@ export default function Home() {
             {CatalogDummy?.slice(0, 6)?.map((item, i) => {
               return (
                 <CatalogCardPage
-                  item_name={item.item_name}
+                  product={item.product}
                   key={i}
-                  item_photo={item.item_photo}
-                  item_disc={item.item_disc}
-                  item_price={item.item_price}
+                  image={item.image}
+                  disc={item.disc}
+                  price={item.price}
                   id={i}
+                  stock={item.stock}
                 />
               );
             })}

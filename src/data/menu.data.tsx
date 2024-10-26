@@ -51,122 +51,146 @@ export const CategoryProduct = [
 export const CatalogDummy = [
   {
     id: 1,
-    item_name: "Wallpaper 01",
-    item_disc: 0,
-    item_desc: "Lorem ipsum dolor sit amet adisplicing",
-    item_price: 10000,
-    item_photo: [
+    product: "Wallpaper 01",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 10000,
+    image: [
       "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
     ],
+    stock: true,
+    category: 'Wallpaper'
   },
   {
     id: 2,
-    item_name: "Wallpaper 02",
-    item_disc: 0,
-    item_desc: "Santo paulo execudo toxedo kacau hasta la vista",
-    item_price: 12000,
-    item_photo: [],
+    product: "Wallpaper 02",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 12000,
+    image: [],
+    stock:true,
+    category: 'Wallpaper'
   },
   {
     id: 3,
-    item_name: "Wallpaper 03",
-    item_disc: 4000,
-    item_desc: "Wong pehong nakolai ja ne wong pekok tenan",
-    item_price: 15000,
-    item_photo: [
+    product: "Wallpaper 03",
+    disc: 4000,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 15000,
+    image: [
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
     ],
+    stock:false,
+    category: 'Wallpaper'
   },
   {
     id: 4,
-    item_name: "Wallpaper 04",
-    item_disc: 1000,
-    item_desc: "Trash must be done in the box trash",
-    item_price: 13000,
-    item_photo: [
+    product: "Wallpaper 04",
+    disc: 1000,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 13000,
+    image: [
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
     ],
+    stock:true,
+    category: 'Gordyn'
   },
   {
     id: 5,
-    item_name: "Wallpaper 05",
-    item_disc: 1000,
-    item_desc: "I need imagine this for development help",
-    item_price: 13000,
-    item_photo: [
+    product: "Wallpaper 05",
+    disc: 1000,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 13000,
+    image: [
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
     ],
+    stock:false,
+    category: 'Gordyn'
   },
   {
     id: 6,
-    item_name: "Wallpaper 06",
-    item_disc: 1000,
-    item_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque aspernatur at iste voluptate eveniet nemo ex libero vitae doloremque, sunt recusandae nihil, illum iure vel, facilis consequatur inventore laboriosam ab. Ratione magnam nihil a totam provident odio id cupiditate? Enim laudantium sit asperiores maxime suscipit corrupti recusandae ipsum voluptates, quod quia porro ut obcaecati in velit omnis laboriosam accusantium aperiam! Totam, quibusdam mollitia consequuntur asperiores maiores expedita officiis illum corporis labore? Maxime ea id accusantium amet impedit, optio exercitationem! Minima, vel ab aspernatur placeat ipsum quibusdam. Optio tenetur molestiae impedit. Illum, iusto tenetur. Eum eos ea, architecto culpa accusamus aspernatur quae pariatur ratione? Eveniet eligendi assumenda alias natus doloremque iste dicta quisquam, fuga nisi asperiores sequi officia voluptas maiores autem. Nisi sunt maiores, optio tenetur quaerat quis numquam provident possimus adipisci aperiam minima officiis, totam veritatis. Saepe, reiciendis exercitationem! Incidunt harum perferendis non assumenda? Esse consequuntur omnis dolorum nemo nihil.",
-    item_price: 13000,
-    item_photo: [
+    product: "Wallpaper 06",
+    disc: 1000,
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque aspernatur at iste voluptate eveniet nemo ex libero vitae doloremque, sunt recusandae nihil, illum iure vel, facilis consequatur inventore laboriosam ab. Ratione magnam nihil a totam provident odio id cupiditate? Enim laudantium sit asperiores maxime suscipit corrupti recusandae ipsum voluptates, quod quia porro ut obcaecati in velit omnis laboriosam accusantium aperiam! Totam, quibusdam mollitia consequuntur asperiores maiores expedita officiis illum corporis labore? Maxime ea id accusantium amet impedit, optio exercitationem! Minima, vel ab aspernatur placeat ipsum quibusdam. Optio tenetur molestiae impedit. Illum, iusto tenetur. Eum eos ea, architecto culpa accusamus aspernatur quae pariatur ratione? Eveniet eligendi assumenda alias natus doloremque iste dicta quisquam, fuga nisi asperiores sequi officia voluptas maiores autem. Nisi sunt maiores, optio tenetur quaerat quis numquam provident possimus adipisci aperiam minima officiis, totam veritatis. Saepe, reiciendis exercitationem! Incidunt harum perferendis non assumenda? Esse consequuntur omnis dolorum nemo nihil.",
+    price: 13000,
+    image: [
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
       "https://picsum.photos/800/600",
     ],
+    stock:true,
+    category: 'Carpet'
   },
   {
     id: 7,
-    item_name: "Wallpaper 07",
-    item_disc: 0,
-    item_desc: "Santo paulo execudo toxedo kacau hasta la vista",
-    item_price: 30000,
-    item_photo: [],
+    product: "Wallpaper 07",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 30000,
+    image: [],
+    stock:true,
+    category: 'Gordyn'
   },
   {
     id: 8,
-    item_name: "Wallpaper 08",
-    item_disc: 0,
-    item_desc: "Santo paulo execudo toxedo kacau hasta la vista",
-    item_price: 25000,
-    item_photo: [],
+    product: "Wallpaper 08",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 25000,
+    image: [],
+    stock:true,
+    category: 'Flooring'
   },
   {
     id: 9,
-    item_name: "Wallpaper 09",
-    item_disc: 11000,
-    item_desc: "Santo paulo execudo toxedo kacau hasta la vista",
-    item_price: 23000,
-    item_photo: [],
+    product: "Wallpaper 09",
+    disc: 11000,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 23000,
+    image: [],
+    stock:true,
+    category: 'Flooring'
   },
   {
     id: 10,
-    item_name: "Wallpaper 10",
-    item_disc: 0,
-    item_desc: "Lorem ipsum dolor sit amet adisplicing",
-    item_price: 12000,
-    item_photo: [
+    product: "Wallpaper 10",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 12000,
+    image: [
       "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
     ],
+    stock:true,
+    category: 'Flooring'
   },
   {
     id: 11,
-    item_name: "Wallpaper 11",
-    item_disc: 0,
-    item_desc: "Lorem ipsum dolor sit amet adisplicing",
-    item_price: 14000,
-    item_photo: [
+    product: "Wallpaper 11",
+    disc: 0,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 14000,
+    image: [
       "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
     ],
+    stock:true,
+    category: 'Flooring'
   },
   {
     id: 12,
-    item_name: "Wallpaper 12",
-    item_disc: 500,
-    item_desc: "Lorem ipsum dolor sit amet adisplicing",
-    item_price: 16000,
-    item_photo: [
+    product: "Wallpaper 12",
+    disc: 500,
+    desc: "Lorem ipsum dolor sit amet adisplicing",
+    price: 16000,
+    image: [
       "https://fastly.picsum.photos/id/164/200/200.jpg?hmac=UA4QhIt441pdFJ6Uam2yCxzda_KjWgQgy8fYs_-NFEM",
     ],
+    stock:true,
+    category: 'Furniture'
   },
 ];

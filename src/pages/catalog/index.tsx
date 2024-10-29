@@ -94,130 +94,130 @@ const CatalogPage: React.FC = () => {
   };
 
   return (
-    <PageContainer>
-      <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative">
-        <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
-          <div
-            className="w-full flex justify-between items-center text-premium cursor-pointer"
-            onClick={() => {
-              setOpenFilterCategory(!openFilterCategory);
-            }}
-          >
-            <div className="text-lg font-semibold font-philosopher">Filter</div>
-            {openFilterCategory ? (
-              <IoIosArrowDropup size={30} />
-            ) : (
-              <IoIosArrowDropdown size={30} />
-            )}
-          </div>
-
-          {loading ? (
-            <Loading
-              className="bg-premium rounded-xl py-10"
-              color="border-t-premium"
-            />
-          ) : (
-            <div
-              className={`w-full flex flex-row md:flex-col flex-wrap gap-2 p-3 rounded-xl bg-premium transition-transform duration-1000 ease-in-out ${
-                openFilterCategory
-                  ? "h-auto opacity-100 translate-y-0"
-                  : "h-0 opacity-0 translate-y-[-30px]"
-              } overflow-hidden`}
-            >
-              {category?.map((item, i) => {
-                return (
-                  <div
-                    className="pe-3 bg-third md:bg-transparent rounded-2xl w-fit"
-                    key={i}
-                  >
-                    <Checkbox
-                      label={
-                        <Typography className="text-white md:text-main text-xs p-0 m-0 md:font-semibold">
-                          {item.name}
-                        </Typography>
-                      }
-                      checked={selectedCategory === item.name}
-                      onChange={(e) =>
-                        handleCategoryChange(item.name, e.target.checked)
-                      }
-                      className="border-white md:border-main h-4 w-4 p-0 m-0"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          )}
+    <>
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <Loading className="py-10" color="border-t-premium" />
         </div>
-        <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
-          <div className=" w-full flex justify-between items-center text-premium relative">
-            <div className="text-lg font-semibold font-philosopher">
-              List Products
-            </div>
-            <div
-              onClick={() => {
-                setSelectedCategory(null);
-                setParams((prev) => ({
-                  ...prev,
-                  searchby: "product",
-                }));
-              }}
-              className="w-1/2"
-            >
-              <SearchCatalog
-                onChange={handleSearchChange}
-                onKeyDown={handleSearchKeyDown}
-              />
-            </div>
-
-            <div className="flex flex-row items-center">
-              {openFilterList ? (
-                <FaArrowUpAZ size={20} />
-              ) : (
-                <FaArrowDownAZ size={20} />
-              )}
-              <FaFilter
-                size={24}
+      ) : (
+        <PageContainer>
+          <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative">
+            <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
+              <div
+                className="w-full flex justify-between items-center text-premium cursor-pointer"
                 onClick={() => {
-                  setOpenFilterList(!openFilterList);
-                  handleSortToggle();
+                  setOpenFilterCategory(!openFilterCategory);
                 }}
-                className="cursor-pointer"
-              />
+              >
+                <div className="text-lg font-semibold font-philosopher">
+                  Filter
+                </div>
+                {openFilterCategory ? (
+                  <IoIosArrowDropup size={30} />
+                ) : (
+                  <IoIosArrowDropdown size={30} />
+                )}
+              </div>
+              <div
+                className={`w-full flex flex-row md:flex-col flex-wrap gap-2 p-3 rounded-xl bg-premium transition-transform duration-1000 ease-in-out ${
+                  openFilterCategory
+                    ? "h-auto opacity-100 translate-y-0"
+                    : "h-0 opacity-0 translate-y-[-30px]"
+                } overflow-hidden`}
+              >
+                {category?.map((item, i) => {
+                  return (
+                    <div
+                      className="pe-3 bg-third md:bg-transparent rounded-2xl w-fit"
+                      key={i}
+                    >
+                      <Checkbox
+                        label={
+                          <Typography className="text-white md:text-main text-xs p-0 m-0 md:font-semibold">
+                            {item.name}
+                          </Typography>
+                        }
+                        checked={selectedCategory === item.name}
+                        onChange={(e) =>
+                          handleCategoryChange(item.name, e.target.checked)
+                        }
+                        className="border-white md:border-main h-4 w-4 p-0 m-0"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
+              <div className=" w-full flex justify-between items-center text-premium relative">
+                <div className="text-lg font-semibold font-philosopher">
+                  List Products
+                </div>
+                <div
+                  onClick={() => {
+                    setSelectedCategory(null);
+                    setParams((prev) => ({
+                      ...prev,
+                      searchby: "product",
+                    }));
+                  }}
+                  className="w-1/2"
+                >
+                  <SearchCatalog
+                    onChange={handleSearchChange}
+                    onKeyDown={handleSearchKeyDown}
+                  />
+                </div>
+
+                <div className="flex flex-row items-center">
+                  {openFilterList ? (
+                    <FaArrowUpAZ size={20} />
+                  ) : (
+                    <FaArrowDownAZ size={20} />
+                  )}
+                  <FaFilter
+                    size={24}
+                    onClick={() => {
+                      setOpenFilterList(!openFilterList);
+                      handleSortToggle();
+                    }}
+                    className="cursor-pointer"
+                  />
+                </div>
+              </div>
+              {products && products?.list?.length > 0 ? (
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                  {products?.list?.map((item, i) => {
+                    return (
+                      <CatalogCardPage
+                        product={item.product}
+                        key={i}
+                        image={item.image}
+                        disc={item.disc}
+                        price={item.price}
+                        stock={item.stock}
+                        id={item.id}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="text-2xl text-premium flex justify-center items-center my-32 h-full font-semibold">
+                  <div>Available soon...</div>
+                </div>
+              )}
             </div>
           </div>
-          {loading ? (
-            <Loading className="mt-32 mb-28" color="border-t-premium" />
-          ) : products && products?.list?.length > 0 ? (
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-              {products?.list?.map((item, i) => {
-                return (
-                  <CatalogCardPage
-                    product={item.product}
-                    key={i}
-                    image={item.image}
-                    disc={item.disc}
-                    price={item.price}
-                    stock={item.stock}
-                    id={item.id}
-                  />
-                );
-              })}
-            </div>
-          ) : (
-            <div className="text-2xl text-premium flex justify-center items-center my-32 h-full font-semibold">
-              <div>Available soon...</div>
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="my-10 flex justify-center items-center">
-        <Pagination
-          totalPage={products?.pagination?.totalPage || 1}
-          pageNow={params.page}
-          onPageChange={handlePageChange}
-        />
-      </div>
-    </PageContainer>
+          <div className="my-10 flex justify-center items-center">
+            <Pagination
+              totalPage={products?.pagination?.totalPage || 1}
+              pageNow={params.page}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </PageContainer>
+      )}
+    </>
   );
 };
 

@@ -54,13 +54,17 @@ const DetailCatalog: React.FC = () => {
       ) : (
         <>
           <Head>
-            <title>{truncateText(data?.product as string, 50)}</title>
+            <title>
+              {truncateText(data?.product as string, 50) || "Catalog"}
+            </title>
             <meta
               name="description"
-              content={truncateText(data?.description as string, 150)?.replace(
-                /<[^>]+>/g,
-                ""
-              )}
+              content={
+                truncateText(data?.description as string, 150)?.replace(
+                  /<[^>]+>/g,
+                  ""
+                ) || `Produk id ${id}`
+              }
             />
             <meta
               name="keywords"
@@ -68,36 +72,48 @@ const DetailCatalog: React.FC = () => {
             />
             <meta
               property="og:title"
-              content={truncateText(data?.product as string, 50)}
+              content={truncateText(data?.product as string, 50) || "Catalog"}
             />
             <meta
               property="og:description"
-              content={truncateText(data?.description as string, 150)?.replace(
-                /<[^>]+>/g,
-                ""
-              )}
+              content={
+                truncateText(data?.description as string, 150)?.replace(
+                  /<[^>]+>/g,
+                  ""
+                ) || `Produk id ${id}`
+              }
             />
-            <meta property="og:image" content={data?.image[0]} />
+            <meta
+              property="og:image"
+              content={
+                data?.image[0] ||
+                "https://res.cloudinary.com/dxao06apr/image/upload/v1729950357/dont%20delete%20before%20check/ssyk2vjb7yyvi5bv7sfg.jpg"
+              }
+            />
             <meta
               property="og:url"
-              content={`https://verata.vercel.app/catalog/${
-                data?.id as string
-              }`}
+              content={`https://verata.vercel.app/catalog/${id}`}
             />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta
               name="twitter:title"
-              content={truncateText(data?.product as string, 50)}
+              content={truncateText(data?.product as string, 50) || 'Catalog'}
             />
             <meta
               name="twitter:description"
               content={truncateText(data?.description as string, 150)?.replace(
                 /<[^>]+>/g,
                 ""
-              )}
+              ) || `Produk id ${id}`}
             />
-            <meta name="twitter:image" content={data?.image[0]} />
+            <meta
+              name="twitter:image"
+              content={
+                data?.image[0] ||
+                "https://res.cloudinary.com/dxao06apr/image/upload/v1729950357/dont%20delete%20before%20check/ssyk2vjb7yyvi5bv7sfg.jpg"
+              }
+            />
           </Head>
           <PageContainer>
             {data && data?.image?.length > 0 ? (

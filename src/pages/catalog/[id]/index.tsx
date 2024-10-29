@@ -97,14 +97,23 @@ const DetailCatalog: React.FC = () => {
                 data && data?.disc > 0 ? "line-through" : ""
               } text-base`}
             >
-              Rp. {data?.price}
+              {data?.price.toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+              })}
             </div>
             <div className="bg-red-400 px-2 py-1 text-xs rounded-xl font-semibold">
               Disc {data && ((data?.disc / data?.price) * 100).toFixed(0)}%
             </div>
           </div>
           <div className="font-bold text-2xl">
-            Rp. {data && data?.price - data?.disc}
+            {data &&
+              (data?.price - data?.disc).toLocaleString("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+              })}
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 flex items-center justify-center md:justify-end">
@@ -119,7 +128,10 @@ const DetailCatalog: React.FC = () => {
           <div className="font-semibold text-xl text-premium">
             {data?.product}
           </div>
-          <div className="text-sm mt-5 text-justify">{data?.description}</div>
+          <div
+            className="text-sm mt-5 text-justify"
+            dangerouslySetInnerHTML={{ __html: data?.description as string }}
+          />
         </div>
       </div>
     </PageContainer>

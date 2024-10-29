@@ -47,7 +47,7 @@ const DetailCatalog: React.FC = () => {
         <title>{truncateText(data?.product as string, 50)}</title>
         <meta
           name="description"
-          content={truncateText(data?.description as string, 150).replace(/<[^>]+>/g, '')}
+          content={truncateText(data?.description as string, 150)?.replace(/<[^>]+>/g, '')}
         />
         <meta
           name="keywords"
@@ -59,7 +59,7 @@ const DetailCatalog: React.FC = () => {
         />
         <meta
           property="og:description"
-          content={truncateText(data?.description as string, 150).replace(/<[^>]+>/g, '')}
+          content={truncateText(data?.description as string, 150)?.replace(/<[^>]+>/g, '')}
         />
         <meta property="og:image" content={data?.image[0]} />
         <meta
@@ -74,7 +74,7 @@ const DetailCatalog: React.FC = () => {
         />
         <meta
           name="twitter:description"
-          content={truncateText(data?.description as string, 150).replace(/<[^>]+>/g, '')}
+          content={truncateText(data?.description as string, 150)?.replace(/<[^>]+>/g, '')}
         />
         <meta name="twitter:image" content={data?.image[0]} />
       </Head>

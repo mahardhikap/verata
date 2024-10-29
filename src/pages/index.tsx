@@ -1,13 +1,11 @@
 import PageContainer from "@/containers/page.container";
 import HallVerata from "../assets/images/hall-verata.jpg";
 import Image from "next/image";
-import { CatalogDummy } from "@/data/menu.data";
 import { useRouter } from "next/router";
 import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import Head from "next/head";
 import {
-  FilterCatalogResI,
-  CatalogParamsI,
+  FilterCatalogResI
 } from "@/interfaces/catalog-card.interface";
 import { listProductFilter } from "@/api/catalog.api";
 import { useEffect, useState } from "react";

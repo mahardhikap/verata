@@ -42,6 +42,7 @@ export interface PaginationI {
 }
 
 export interface ProductI {
+  id:string
   product: string;
   disc: number;
   description: string;

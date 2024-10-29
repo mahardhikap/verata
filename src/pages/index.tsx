@@ -42,7 +42,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchDataProduct();
-  }, [params]);
+  }, []);
 
   return (
     <>

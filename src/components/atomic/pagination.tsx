@@ -1,12 +1,25 @@
 import React from "react";
+import { PaginationI } from "@/interfaces/catalog-card.interface";
 
-const Pagination: React.FC = () => {
+interface PaginationProps extends PaginationI {
+  onPageChange: (newPage: number) => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+  totalPage,
+  pageNow,
+  onPageChange,
+}) => {
   return (
     <>
       <div className="flex items-center gap-8">
         <button
-          className="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-premium hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-second active:text-second active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className={`rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-premium hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-second active:text-second active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ${
+            pageNow === 1 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
           type="button"
+          onClick={() => pageNow > 1 && onPageChange(pageNow - 1)}
+          disabled={pageNow === 1}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,13 +36,15 @@ const Pagination: React.FC = () => {
         </button>
 
         <p className="text-premium font-philosopher">
-          Page <strong>1</strong> of&nbsp;
-          <strong>10</strong>
+          Page <strong>{pageNow}</strong> of&nbsp;
+          <strong>{totalPage}</strong>
         </p>
 
         <button
-          className="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-premium hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-second active:text-second active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className={`rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-premium hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-second active:text-second active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ${pageNow === totalPage ? "opacity-50 cursor-not-allowed" : ""}`}
           type="button"
+          onClick={() => pageNow < totalPage && onPageChange(pageNow + 1)}
+          disabled={pageNow === totalPage}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

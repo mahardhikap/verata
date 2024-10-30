@@ -14,7 +14,7 @@ const FooterPage: React.FC = () => {
             ABOUT
           </div>
           <div className="text-sm">
-            Verata Wallpaper Jogja menawarkan kualitas impor kebutuhan interior dan eksterior untuk memperindah ruang Anda.
+            Verata Wallpaper dan Interior Jogja menawarkan kualitas impor kebutuhan wallpaper dan interior untuk memperindah ruang Anda.
           </div>
         </div>
         <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">

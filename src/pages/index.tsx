@@ -1,12 +1,11 @@
 import PageContainer from "@/containers/page.container";
-import HallVerata from "../assets/images/hall-verata.jpg";
+import HallVerata from "../assets/images/verata-hall.jpg";
+import OfficeVerata from "../assets/images/verata-office.jpg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import CatalogCardPage from "@/components/catalog/catalog-card-page.component";
 import Head from "next/head";
-import {
-  FilterCatalogResI
-} from "@/interfaces/catalog-card.interface";
+import { FilterCatalogResI } from "@/interfaces/catalog-card.interface";
 import { listProductFilter } from "@/api/catalog.api";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -48,19 +47,19 @@ export default function Home() {
         <title>Verata Wallpaper Jogja</title>
         <meta
           name="description"
-          content="Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan eksterior Anda."
+          content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda."
         />
         <meta
           name="keywords"
-          content="Wallpaper Kualitas Impor, Interior, Eksterior, Verata, Jogja, Yogyakarta, Wallpaper Yogyakarta, Wallpaper Jogja, Verata Wallpaper"
+          content="Wallpaper Kualitas Impor, Interior, Verata, Jogja, Yogyakarta, Wallpaper Yogyakarta, Wallpaper Jogja, Verata Wallpaper"
         />
         <meta
           property="og:title"
-          content="Verata Wallpaper Jogja - Penyedia Interior dan Eksterior Premium"
+          content="Verata Wallpaper dan Interior Jogja - Penyedia Wallpaper dan Interior Premium"
         />
         <meta
           property="og:description"
-          content="Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan eksterior Anda dengan koleksi produk kualitas impor."
+          content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda dengan koleksi produk kualitas impor."
         />
         <meta
           property="og:image"
@@ -71,25 +70,26 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Verata Wallpaper Jogja - Penyedia Interior dan Eksterior Premium"
+          content="Verata Wallpaper dan Interior Jogja - Penyedia Wallpaper dan Interior Premium"
         />
         <meta
           name="twitter:description"
-          content="Verata Wallpaper Jogja adalah penyedia kebutuhan interior dan eksterior Anda dengan koleksi produk kualitas impor."
+          content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda dengan koleksi produk kualitas impor."
         />
         <meta name="twitter:image" content="/verata.jpg" />
       </Head>
       <PageContainer>
         <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-premium text-center md:text-start text-3xl xl:text-4xl w-full font-normal font-philosopher mb-5">
-              INTERIOR DAN EKSTERIOR PREMIUM.
+            <h1 className="text-premium text-center md:text-right text-3xl xl:text-4xl w-full font-normal font-philosopher mb-5">
+              WALLPAPER DAN INTERIOR PREMIUM.
             </h1>
-            <p className="text-premium text-center md:text-start text-base sm:text-lg">
-              <strong>Verata Wallpaper Jogja</strong> adalah penyedia kebutuhan
-              interior dan eksterior Anda.
+            <p className="text-premium text-center md:text-right text-base lg:text-lg">
+              <strong>Verata Wallpaper dan Interior Jogja</strong> menawarkan
+              kualitas impor kebutuhan wallpaper dan interior untuk memperindah
+              ruang Anda.
             </p>
-            <button className="px-3 py-2 border-2 border-premium hover:bg-premium font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-5">
+            <button className="px-3 py-2 border-2 border-premium hover:bg-premium font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10">
               Selengkapnya
             </button>
           </div>
@@ -99,21 +99,59 @@ export default function Home() {
               alt="hall-image"
               width={1000}
               height={1000}
-              className="rounded-tl-3xl rounded-br-3xl border border-premium object-cover aspect-square"
+              className="rounded-tl-3xl border-e-4 border-b-4 border-premium rounded-br-3xl object-cover aspect-square"
             />
           </div>
         </div>
         <div className="container mx-auto">
-          <h2 className="font-semibold text-2xl text-premium text-center mt-10 font-philosopher">
+          <h2 className="font-semibold text-2xl text-premium text-center mt-24 font-philosopher">
+            SERVICES
+          </h2>
+          <p className="text-premium text-center text-sm lg:text-base mb-10">
+            Kepuasan pelanggan menjadi prioritas kami.
+          </p>
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
+            <div>
+              <Image
+                src={OfficeVerata}
+                width={1000}
+                height={1000}
+                alt="office-verata"
+                className="rounded-tl-3xl border-s-4 border-b-4 border-premium rounded-br-3xl object-cover aspect-square"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-3">
+              <div className="p-5 flex flex-col gap-5">
+                <h3 className="text-xl text-premium font-semibold">Consult</h3>
+                <p>
+                  Tim kami siap memberikan preferensi untuk dekorasi yang anda
+                  butuhkan.
+                </p>
+              </div>
+              <div className="p-5 flex flex-col gap-5">
+                <h3 className="text-xl text-premium font-semibold">
+                  Reparation
+                </h3>
+                <p>Anda bisa mendapatkan reparasi dari tim kami.</p>
+              </div>
+              <div className="p-5 flex flex-col gap-5">
+                <h3 className="text-xl text-premium font-semibold">Delivery</h3>
+                <p>
+                  Pengiriman dapat dilakukan di hari yang sama hingga sampai ke
+                  tempat tujuan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container mx-auto">
+          <h2 className="font-semibold text-2xl text-premium text-center mt-24 font-philosopher mb-10">
             CATALOG
           </h2>
-          <p className="text-premium text-center text-base sm:text-lg mb-5">
-            Koleksi produk kualitas impor.
-          </p>
           {loading ? (
             <Loading className="my-40" color="border-t-premium" />
           ) : (
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
               {products?.list?.map((item, i) => {
                 return (
                   <CatalogCardPage
@@ -129,7 +167,7 @@ export default function Home() {
               })}
             </div>
           )}
-          <div className="flex justify-center items-center mt-5">
+          <div className="flex justify-center items-center mt-10">
             <button
               className="col-span-2 lg:col-span-3 text-center text-base cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 px-3 py-2 hover:bg-premium border-2 border-premium w-fit font-semibold"
               onClick={() => router.push("/catalog")}

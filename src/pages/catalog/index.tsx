@@ -16,6 +16,8 @@ import {
 } from "@/interfaces/catalog-card.interface";
 import { CategoryListI } from "@/interfaces/category.interface";
 import Loading from "@/components/atomic/loading";
+import Banner from '../../assets/images/verata-room.jpg'
+import Image from "next/image";
 
 const CatalogPage: React.FC = () => {
   const [openFilterCategory, setOpenFilterCategory] = useState<boolean>(true);
@@ -101,6 +103,9 @@ const CatalogPage: React.FC = () => {
         </div>
       ) : (
         <PageContainer>
+          <div className="w-full mb-10 object-cover">
+            <Image src={Banner} width={1000} height={1000} alt="verata-product" className="w-full object-cover sm:h-60 rounded-3xl border border-premium"/>
+          </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative">
             <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
               <div

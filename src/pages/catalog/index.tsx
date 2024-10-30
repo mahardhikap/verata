@@ -16,7 +16,7 @@ import {
 } from "@/interfaces/catalog-card.interface";
 import { CategoryListI } from "@/interfaces/category.interface";
 import Loading from "@/components/atomic/loading";
-import Banner from '../../assets/images/verata-room.jpg'
+import Banner from "../../assets/images/verata-room.jpg";
 import Image from "next/image";
 
 const CatalogPage: React.FC = () => {
@@ -84,6 +84,7 @@ const CatalogPage: React.FC = () => {
         ...prev,
         searchby: "category",
         search: categoryName,
+        page:1
       }));
     } else {
       setSelectedCategory(null);
@@ -91,6 +92,7 @@ const CatalogPage: React.FC = () => {
         ...prev,
         searchby: "product",
         search: "",
+        page:1
       }));
     }
   };
@@ -104,7 +106,13 @@ const CatalogPage: React.FC = () => {
       ) : (
         <PageContainer>
           <div className="w-full mb-10 object-cover">
-            <Image src={Banner} width={1000} height={1000} alt="verata-product" className="w-full object-cover sm:h-60 rounded-3xl border border-premium"/>
+            <Image
+              src={Banner}
+              width={1000}
+              height={1000}
+              alt="verata-product"
+              className="w-full object-cover sm:h-60 rounded-3xl border border-premium"
+            />
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative">
             <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
@@ -164,6 +172,7 @@ const CatalogPage: React.FC = () => {
                     setParams((prev) => ({
                       ...prev,
                       searchby: "product",
+                      search: "",
                     }));
                   }}
                   className="w-1/2"

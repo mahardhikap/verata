@@ -84,7 +84,7 @@ const CatalogPage: React.FC = () => {
         ...prev,
         searchby: "category",
         search: categoryName,
-        page:1
+        page: 1,
       }));
     } else {
       setSelectedCategory(null);
@@ -92,7 +92,7 @@ const CatalogPage: React.FC = () => {
         ...prev,
         searchby: "product",
         search: "",
-        page:1
+        page: 1,
       }));
     }
   };
@@ -105,16 +105,17 @@ const CatalogPage: React.FC = () => {
         </div>
       ) : (
         <PageContainer>
-          <div className="w-full mb-10 object-cover">
+          <div className="relative w-full mb-10 object-cover">
             <Image
               src={Banner}
-              width={1000}
-              height={1000}
+              width={10000}
+              height={10000}
               alt="verata-product"
-              className="w-full object-cover sm:h-60 rounded-3xl border border-premium"
+              className="w-full object-cover sm:h-60 rounded-b-3xl"
             />
+            <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl" />
           </div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative">
+          <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative px-5">
             <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
               <div
                 className="w-full flex justify-between items-center text-premium cursor-pointer"
@@ -122,9 +123,7 @@ const CatalogPage: React.FC = () => {
                   setOpenFilterCategory(!openFilterCategory);
                 }}
               >
-                <div className="text-lg font-semibold font-philosopher">
-                  Filter
-                </div>
+                <div className="text-lg font-bold">Filter</div>
                 {openFilterCategory ? (
                   <IoIosArrowDropup size={30} />
                 ) : (
@@ -163,9 +162,7 @@ const CatalogPage: React.FC = () => {
             </div>
             <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
               <div className=" w-full flex justify-between items-center text-premium relative">
-                <div className="text-lg font-semibold font-philosopher">
-                  List Products
-                </div>
+                <div className="text-lg font-bold">List Products</div>
                 <div
                   onClick={() => {
                     setSelectedCategory(null);
@@ -200,7 +197,7 @@ const CatalogPage: React.FC = () => {
                 </div>
               </div>
               {products && products?.list?.length > 0 ? (
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                   {products?.list?.map((item, i) => {
                     return (
                       <CatalogCardPage

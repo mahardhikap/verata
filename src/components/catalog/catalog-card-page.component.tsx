@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { CardProps } from "@/interfaces/catalog-card.interface";
 import { useRouter } from "next/router";
+import { truncateText } from "@/utils/truncate-text";
 
 const CatalogCardPage: React.FC<CardProps> = ({
   product,
@@ -40,8 +41,8 @@ const CatalogCardPage: React.FC<CardProps> = ({
         </div>
       )}
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
-      <span className="absolute bottom-0 z-5 text-white p-3 truncate w-full">
-        {product}
+      <span className="absolute bottom-0 z-5 text-white p-3 break-words w-full text-sm md:text-base">
+        {truncateText(product as string, 50)}
       </span>
     </div>
   );

@@ -10,11 +10,12 @@ import { listProductFilter } from "@/api/catalog.api";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Loading from "@/components/atomic/loading";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function Home() {
   const router = useRouter();
   const params = {
-    limit: 6,
+    limit: 10,
     page: 1,
     search: "",
     searchby: "product",
@@ -79,79 +80,41 @@ export default function Home() {
         <meta name="twitter:image" content="/verata.jpg" />
       </Head>
       <PageContainer>
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
-          <div className="flex flex-col justify-center items-center">
-            <h1 className="text-premium text-center md:text-right text-3xl xl:text-4xl w-full font-normal font-philosopher mb-5">
-              WALLPAPER DAN INTERIOR PREMIUM.
-            </h1>
-            <p className="text-premium text-center md:text-right text-base lg:text-lg">
-              <strong>Verata Wallpaper dan Interior Jogja</strong> menawarkan
-              kualitas impor kebutuhan wallpaper dan interior untuk memperindah
-              ruang Anda.
-            </p>
-            <button className="px-3 py-2 border-2 border-premium hover:bg-premium font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10">
-              Selengkapnya
-            </button>
-          </div>
-          <div className="flex justify-center lg:justify-end items-center">
-            <Image
-              src={HallVerata}
-              alt="hall-image"
-              width={1000}
-              height={1000}
-              className="rounded-tl-3xl border-e-4 border-b-4 border-premium rounded-br-3xl object-cover aspect-square"
-            />
-          </div>
-        </div>
-        <div className="container mx-auto">
-          <h2 className="font-semibold text-2xl text-premium text-center mt-24 font-philosopher">
-            SERVICES
-          </h2>
-          <p className="text-premium text-center text-sm lg:text-base mb-10">
-            Kepuasan pelanggan menjadi prioritas kami.
-          </p>
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
-            <div>
+        <div className="bg-premium rounded-b-3xl pb-10 md:py-10">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
+            <div className="flex flex-col justify-center items-center md:items-end order-2 md:order-1 px-5">
+              <h1 className="text-main text-center md:text-right text-2xl xl:text-3xl w-full font-bold mb-5">
+                WALLPAPER DAN INTERIOR PREMIUM.
+              </h1>
+              <p className="text-main text-center md:text-right text-sm lg:text-base">
+                <strong>Verata Wallpaper dan Interior Jogja</strong> menawarkan
+                kualitas impor kebutuhan wallpaper dan interior untuk
+                memperindah ruang Anda.
+              </p>
+              <button className="px-3 py-2 border-2 border-main hover:bg-main text-main hover:text-white font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit flex items-center gap-2">
+                Selengkapnya <FaLongArrowAltRight />
+              </button>
+            </div>
+            <div className="relative flex justify-center lg:justify-end items-center mx-0 md:mx-5 order-1 md:order-2">
               <Image
-                src={OfficeVerata}
-                width={1000}
-                height={1000}
-                alt="office-verata"
-                className="rounded-tl-3xl border-s-4 border-b-4 border-premium rounded-br-3xl object-cover aspect-square"
+                src={HallVerata}
+                alt="hall-image"
+                width={10000}
+                height={10000}
+                className="object-cover aspect-square sm:aspect-video rounded-b-3xl md:rounded-3xl"
               />
-            </div>
-            <div className="flex flex-col justify-center p-3">
-              <div className="p-5 flex flex-col gap-5">
-                <h3 className="text-xl text-premium font-semibold">Consult</h3>
-                <p>
-                  Tim kami siap memberikan preferensi untuk dekorasi yang anda
-                  butuhkan.
-                </p>
-              </div>
-              <div className="p-5 flex flex-col gap-5">
-                <h3 className="text-xl text-premium font-semibold">
-                  Reparation
-                </h3>
-                <p>Anda bisa mendapatkan reparasi dari tim kami.</p>
-              </div>
-              <div className="p-5 flex flex-col gap-5">
-                <h3 className="text-xl text-premium font-semibold">Delivery</h3>
-                <p>
-                  Pengiriman dapat dilakukan di hari yang sama hingga sampai ke
-                  tempat tujuan.
-                </p>
-              </div>
+              <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl md:rounded-3xl" />
             </div>
           </div>
         </div>
         <div className="container mx-auto">
-          <h2 className="font-semibold text-2xl text-premium text-center mt-24 font-philosopher mb-10">
+          <h2 className="font-bold text-2xl text-premium text-center mt-24 mb-10">
             CATALOG
           </h2>
           {loading ? (
             <Loading className="my-40" color="border-t-premium" />
           ) : (
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-5 px-5">
               {products?.list?.map((item, i) => {
                 return (
                   <CatalogCardPage
@@ -169,11 +132,55 @@ export default function Home() {
           )}
           <div className="flex justify-center items-center mt-10">
             <button
-              className="col-span-2 lg:col-span-3 text-center text-base cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 px-3 py-2 hover:bg-premium border-2 border-premium w-fit font-semibold"
+              className="col-span-2 lg:col-span-3 text-center cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 px-3 py-2 hover:bg-premium border-2 border-premium w-fit font-semibold mb-10 flex items-center gap-2 text-premium hover:text-white"
               onClick={() => router.push("/catalog")}
             >
-              Produk Lainnya
+              Produk Lainnya <FaLongArrowAltRight />
             </button>
+          </div>
+        </div>
+        <div className="container mx-auto">
+          <h2 className="font-bold text-2xl text-premium text-center mt-10">
+            SERVICES
+          </h2>
+          <p className="text-premium text-center text-sm lg:text-base mb-10">
+            Kepuasan pelanggan menjadi prioritas kami.
+          </p>
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-20 md:px-5 mb-20">
+            <div className="relative">
+              <Image
+                src={OfficeVerata}
+                width={1000}
+                height={1000}
+                alt="office-verata"
+                className="md:rounded-3xl object-cover aspect-video"
+              />
+              <div className="absolute inset-0 bg-black opacity-15 md:rounded-3xl" />
+            </div>
+            <div className="flex flex-col gap-5 justify-center px-5 md:px-0 text-premium">
+              <div className="flex flex-col">
+                <h3 className="text-xl text-premium font-semibold">Consult</h3>
+                <p className="text-sm md:text-base">
+                  Tim kami siap memberikan preferensi untuk dekorasi yang anda
+                  butuhkan.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-xl text-premium font-semibold">
+                  Reparation
+                </h3>
+                <p className="text-sm md:text-base">
+                  Anda bisa mendapatkan reparasi dari tim kami.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-xl text-premium font-semibold">Delivery</h3>
+                <p className="text-sm md:text-base">
+                  Pengiriman dapat dilakukan di hari yang sama hingga sampai ke
+                  tempat tujuan.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </PageContainer>

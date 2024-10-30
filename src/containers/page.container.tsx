@@ -7,6 +7,8 @@ interface PageContainerProps {
   children: ReactNode;
 }
 
+// px-5 sm:px-8 md:px-12 lg:px-20 xl:px-28  2xl:px-40
+
 const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   return (
     <>
@@ -16,7 +18,7 @@ const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
       </Head>
       <div className="font-poppins">
         <HeaderPage />
-        <div className="min-h-screen my-10 text-white px-5 sm:px-8 md:px-12 lg:px-20 xl:px-28  2xl:px-40">
+        <div className="min-h-screen text-white">
           {children}
         </div>
         <FooterPage />

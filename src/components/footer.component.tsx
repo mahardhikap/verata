@@ -2,19 +2,18 @@ import React from "react";
 import {
   FaSquareFacebook,
   FaSquareInstagram,
-  FaSquareXTwitter
+  FaSquareXTwitter,
 } from "react-icons/fa6";
 
 const FooterPage: React.FC = () => {
   return (
-    <div className="bg-premium px-5 rounded-t-3xl">
-      <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 py-32 container mx-auto">
+    <div className="bg-premium px-5 rounded-t-3xl relative">
+      <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 pt-24 pb-32 container mx-auto">
         <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
-          <div className="text-lg md:text-base font-bold">
-            ABOUT
-          </div>
+          <div className="text-lg md:text-base font-bold">ABOUT</div>
           <div className="text-sm">
-            Verata Wallpaper dan Interior Jogja menawarkan kualitas impor kebutuhan wallpaper dan interior untuk memperindah ruang Anda.
+            Verata Wallpaper dan Interior Jogja menawarkan kualitas impor
+            kebutuhan wallpaper dan interior untuk memperindah ruang Anda.
           </div>
         </div>
         <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">
@@ -61,7 +60,9 @@ const FooterPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="text-center col-span-2 md:col-span-4 mt-20">&#169; 2024 by Verata. All Rights Reserved</div>
+      </div>
+      <div className="flex justify-center text-sm items-center py-5 font-medium">
+        <span>&#169; 2024 by <strong>Verata</strong>. All Rights Reserved</span>
       </div>
     </div>
   );

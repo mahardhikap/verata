@@ -11,20 +11,20 @@ const HeaderPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="pe-3 sticky top-0 z-10 bg-main rounded-b-3xl overflow-hidden">
-      <div className="flex flex-row justify-between items-center container mx-auto">
+    <div className="pe-3 sticky top-0 z-10 bg-main overflow-hidden">
+      <div className="flex flex-row justify-between md:justify-start items-center container mx-auto relative my-14 sm:my-16 md:my-8 lg:my-5">
         <Image
           onClick={() => router.replace("/")}
           src={verata}
           alt="logo"
           width={150}
           height={150}
-          className="w-3/12 sm:w-2/12 lg:w-1/12 object-contain cursor-pointer"
+          className="w-3/12 sm:w-2/12 md:w-2/12 lg:w-1/12 object-contain cursor-pointer absolute left-0"
         />
-        <div className="hidden lg:flex flex-row items-center flex-wrap gap-3 ms-20 my-5 text-premium">
+        <div className="hidden md:flex flex-row flex-grow justify-center items-center flex-wrap gap-3 my-5 text-premium">
           {HeaderMenu?.map((item, i) => (
             <div
-              className={`${pathname === item.url_menu ? 'bg-gradient-to-r from-premium via-white to-second text-main' : ''} cursor-pointer hover:bg-gradient-to-r hover:from-premium hover:via-white hover:to-second rounded-xl text-sm px-2 py-1 hover:text-main`}
+              className={`${pathname === item.url_menu ? 'bg-gradient-to-br text-white from-premium to-second' : ''} cursor-pointer hover:bg-gradient-to-br hover:from-premium hover:to-second rounded-xl text-base px-4 py-1 hover:text-main bg-dark font-medium`}
               key={i}
               onClick={() => router.push(item.url_menu)}
             >
@@ -36,7 +36,7 @@ const HeaderPage: React.FC = () => {
         <RiMenu3Line
           size={40}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden p-2 bg-main text-premium rounded"
+          className="block md:hidden p-2 bg-main text-premium rounded absolute right-0"
         />
       </div>
 

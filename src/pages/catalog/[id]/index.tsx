@@ -138,10 +138,13 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
                     </button>
                   ))}
                 </div>
+                <div className="font-semibold text-xl text-premium">
+                  {data.product}
+                </div>
                 <div
                   className={`${
                     data.disc > 0 ? "flex" : "hidden"
-                  } items-center gap-2`}
+                  } items-center gap-2 mt-5`}
                 >
                   <div
                     className={`${
@@ -158,18 +161,15 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
                     Disc {((data.disc / data.price) * 100).toFixed(0)}%
                   </div>
                 </div>
-                <div className="font-bold text-2xl">
+                <div className="font-bold text-2xl my-5">
                   {(data.price - data.disc).toLocaleString("id-ID", {
                     style: "currency",
                     currency: "IDR",
                     minimumFractionDigits: 0,
                   })}
                 </div>
-                <div className="font-semibold text-xl text-premium">
-                  {data.product}
-                </div>
                 <div
-                  className="text-sm mt-5 break-words"
+                  className="text-sm break-words"
                   dangerouslySetInnerHTML={{ __html: data.description }}
                 />
                 <div className="flex justify-center">

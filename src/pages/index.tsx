@@ -11,6 +11,9 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Loading from "@/components/atomic/loading";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { RiCustomerService2Fill } from "react-icons/ri";
+import { CgToolbox } from "react-icons/cg";
+import { MdDeliveryDining } from "react-icons/md";
 
 export default function Home() {
   const router = useRouter();
@@ -111,10 +114,10 @@ export default function Home() {
           <div className="bg-dark rounded-xl p-5 mb-5 flex justify-between items-center gap-1">
             <div>
               <h2 className="font-bold text-2xl text-left font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                CATALOG
+                CATALOGS
               </h2>
               <p className="text-left text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                Produk-produk yang tersedia di showroom kami.
+                Item yang tersedia di showroom kami.
               </p>
             </div>
             <button
@@ -122,7 +125,7 @@ export default function Home() {
               onClick={() => router.push("/catalog")}
             >
               <span className="flex items-center gap-2 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                Products <FaLongArrowAltRight className="text-white" />
+                Lists <FaLongArrowAltRight className="text-white" />
               </span>
             </button>
           </div>
@@ -146,20 +149,20 @@ export default function Home() {
             </div>
           )}
         </div>
-        <div className="container mx-auto px-3 my-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 rounded-xl">
-            <div className="relative aspect-square overflow-hidden col-span-1">
-              <Image
-                src={OfficeVerata}
-                width={1000}
-                height={1000}
-                alt="office-verata"
-                className="rounded-xl object-cover aspect-square"
-              />
-              <div className="absolute inset-0 bg-black opacity-15 md:rounded-xl" />
-            </div>
-            <div className="flex flex-col text-premium pt-5 md:pt-0 md:ps-5 aspect-square col-span-1">
-              <div className="mb-8 bg-dark p-5 rounded-xl h-fit">
+        <div className="container mx-auto relative my-10 px-3">
+          <div className="relative overflow-hidden h-fit md:aspect-video rounded-xl">
+            <Image
+              src={OfficeVerata}
+              width={1000}
+              height={1000}
+              alt="office-verata"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-black opacity-50"/>
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center container mx-auto px-6">
+            <div className="flex flex-col text-premium aspect-video">
+              <div className="mb-4 bg-dark p-5 rounded-xl h-fit">
                 <h2 className="font-bold text-2xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent text-left font-philosopher">
                   SERVICES
                 </h2>
@@ -167,32 +170,41 @@ export default function Home() {
                   Kepuasan pelanggan menjadi prioritas kami.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 bg-dark p-5 rounded-xl flex-grow">
-                <div className="flex flex-col">
-                  <h3 className="text-lg lg:text-xl font-semibold bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                    Consult
-                  </h3>
-                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                    Tim kami siap memberikan preferensi untuk dekorasi yang anda
-                    butuhkan.
-                  </p>
+              <div className="flex flex-col justify-center gap-3 bg-dark p-5 rounded-xl flex-grow">
+                <div className="grid grid-cols-5 gap-3">
+                  <RiCustomerService2Fill size={50} className="col-span-1"/>
+                  <div className="col-span-4">
+                    <h3 className="text-lg lg:text-xl font-semibold bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                      Consult
+                    </h3>
+                    <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                      Tim kami siap memberikan preferensi untuk dekorasi yang
+                      anda butuhkan.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
-                    Reparation
-                  </h3>
-                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                    Anda bisa mendapatkan reparasi dari tim kami.
-                  </p>
+                <div className="grid grid-cols-5 gap-3">
+                  <CgToolbox size={50} className="col-span-1"/>
+                  <div className="col-span-4">
+                    <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
+                      Reparation
+                    </h3>
+                    <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                      Anda bisa mendapatkan reparasi dari tim kami.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
-                    Delivery
-                  </h3>
-                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
-                    Pengiriman dapat dilakukan di hari yang sama hingga sampai
-                    ke tempat tujuan.
-                  </p>
+                <div className="grid grid-cols-5 gap-3">
+                  <MdDeliveryDining size={50} className="col-span-1"/>
+                  <div className="col-span-4">
+                    <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
+                      Delivery
+                    </h3>
+                    <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                      Pengiriman dapat dilakukan di hari yang sama hingga sampai
+                      ke tempat tujuan.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

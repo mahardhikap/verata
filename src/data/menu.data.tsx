@@ -1,16 +1,16 @@
 export const HeaderMenu = [
   {
+    label: "Home",
+    url_menu: "/",
+  },
+  {
     label: "Catalog",
     url_menu: "/catalog",
   },
   {
     label: "About",
     url_menu: "/about",
-  },
-  {
-    label: "Article",
-    url_menu: "/article",
-  },
+  }
 ];
 
 export const CategoryProduct = [

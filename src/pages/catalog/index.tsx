@@ -105,47 +105,51 @@ const CatalogPage: React.FC = () => {
         </div>
       ) : (
         <PageContainer>
-          <div className="relative w-full mb-10 object-cover">
-            <Image
-              src={Banner}
-              width={10000}
-              height={10000}
-              alt="verata-product"
-              className="w-full object-cover sm:h-60"
-            />
-            <div className="absolute inset-0 bg-black opacity-30" />
+          <div className="px-5 container mx-auto mb-10">
+            <div className="relative rounded-xl overflow-hidden">
+              <Image
+                src={Banner}
+                width={10000}
+                height={10000}
+                alt="verata-product"
+                className="w-full object-cover sm:h-60"
+              />
+              <div className="absolute inset-0 bg-black opacity-30" />
+            </div>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative px-5">
             <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
               <div
-                className="w-full flex justify-between items-center text-premium cursor-pointer"
+                className="w-full flex justify-between items-center text-premium bg-dark p-5 rounded-xl cursor-pointer"
                 onClick={() => {
                   setOpenFilterCategory(!openFilterCategory);
                 }}
               >
-                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">Filter</div>
+                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium  to-white bg-clip-text text-transparent">
+                  Filter
+                </div>
                 {openFilterCategory ? (
-                  <IoIosArrowDropup size={30} className="text-white"/>
+                  <IoIosArrowDropup size={30} className="text-premium" />
                 ) : (
-                  <IoIosArrowDropdown size={30} className="text-white"/>
+                  <IoIosArrowDropdown size={30} className="text-premium" />
                 )}
               </div>
               <div
-                className={`w-full flex flex-row md:flex-col flex-wrap gap-2 rounded-xl transition-transform duration-1000 ease-in-out ${
+                className={`w-fit flex flex-row flex-wrap gap-2 rounded-xl transition-transform duration-1000 ease-in-out ${
                   openFilterCategory
                     ? "h-auto opacity-100 translate-y-0"
                     : "h-0 opacity-0 translate-y-[-30px]"
-                } overflow-hidden`}
+                } overflow-hidden bg-dark p-5`}
               >
                 {category?.map((item, i) => {
                   return (
                     <div
-                      className="pe-3 font-philosopher bg-gradient-to-r from-premium via-white to-second rounded-2xl"
+                      className="pe-3 font-philosopher bg-gradient-to-r from-premium to-second rounded-2xl flex-grow"
                       key={i}
                     >
                       <Checkbox
                         label={
-                          <Typography className="text-main text-xs p-0 m-0 md:font-semibold">
+                          <Typography className="text-white text-xs p-0 m-0 font-semibold">
                             {item.name}
                           </Typography>
                         }
@@ -161,8 +165,10 @@ const CatalogPage: React.FC = () => {
               </div>
             </div>
             <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
-              <div className=" w-full flex justify-between items-center text-premium relative">
-                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">List Products</div>
+              <div className=" w-full flex justify-between items-center text-premium relative p-5 bg-dark rounded-xl gap-3">
+                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium to-white bg-clip-text text-transparent">
+                  Calalogs
+                </div>
                 <div
                   onClick={() => {
                     setSelectedCategory(null);
@@ -180,7 +186,7 @@ const CatalogPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex flex-row items-center font-philosopher text-white">
+                <div className="flex flex-row items-center text-premium">
                   {openFilterList ? (
                     <FaArrowUpAZ size={20} />
                   ) : (
@@ -197,7 +203,7 @@ const CatalogPage: React.FC = () => {
                 </div>
               </div>
               {products && products?.list?.length > 0 ? (
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 p-5 bg-dark rounded-xl">
                   {products?.list?.map((item, i) => {
                     return (
                       <CatalogCardPage

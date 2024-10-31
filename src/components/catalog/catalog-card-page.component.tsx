@@ -41,8 +41,8 @@ const CatalogCardPage: React.FC<CardProps> = ({
         </div>
       )}
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
-      <span className="absolute bottom-0 z-5 text-white p-3 break-words w-full text-sm md:text-base">
-        {truncateText(product as string, 50)}
+      <span className="absolute bottom-0 z-5 text-white p-3 break-words w-full text-sm md:text-xs lg:text-sm">
+        {truncateText(product as string, 35)}
       </span>
     </div>
   );

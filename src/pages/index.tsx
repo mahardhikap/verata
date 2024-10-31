@@ -95,7 +95,7 @@ export default function Home() {
                 Selengkapnya <FaLongArrowAltRight />
               </button>
             </div>
-            <div className="relative flex justify-center lg:justify-end items-center mx-0 md:mx-5 order-1 md:order-2">
+            <div className="relative flex justify-center lg:justify-end items-center mx-0 md:mx-5 order-1 md:order-2 aspect-square sm:aspect-video overflow-hidden">
               <Image
                 src={HallVerata}
                 alt="hall-image"
@@ -108,9 +108,12 @@ export default function Home() {
           </div>
         </div>
         <div className="container mx-auto">
-          <h2 className="font-bold text-2xl text-premium text-center mt-24 mb-10">
+          <h2 className="font-bold text-2xl text-premium text-center mt-24">
             CATALOG
           </h2>
+          <p className="text-center text-sm mb-10">
+            Produk-produk yang tersedia di showroom kami.
+          </p>
           {loading ? (
             <Loading className="my-40" color="border-t-premium" />
           ) : (
@@ -143,7 +146,7 @@ export default function Home() {
           <h2 className="font-bold text-2xl text-premium text-center mt-10">
             SERVICES
           </h2>
-          <p className="text-premium text-center text-sm lg:text-base mb-10">
+          <p className="text-center text-sm mb-10">
             Kepuasan pelanggan menjadi prioritas kami.
           </p>
           <div className="grid md:grid-cols-2 gap-10 lg:gap-20 md:px-5 mb-20">
@@ -159,8 +162,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-5 justify-center px-5 md:px-0 text-premium">
               <div className="flex flex-col">
-                <h3 className="text-xl text-premium font-semibold">Consult</h3>
-                <p className="text-sm md:text-base">
+                <h3 className="text-xl font-semibold">Consult</h3>
+                <p className="text-sm text-white">
                   Tim kami siap memberikan preferensi untuk dekorasi yang anda
                   butuhkan.
                 </p>
@@ -169,13 +172,13 @@ export default function Home() {
                 <h3 className="text-xl text-premium font-semibold">
                   Reparation
                 </h3>
-                <p className="text-sm md:text-base">
+                <p className="text-sm text-white">
                   Anda bisa mendapatkan reparasi dari tim kami.
                 </p>
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xl text-premium font-semibold">Delivery</h3>
-                <p className="text-sm md:text-base">
+                <p className="text-sm text-white">
                   Pengiriman dapat dilakukan di hari yang sama hingga sampai ke
                   tempat tujuan.
                 </p>

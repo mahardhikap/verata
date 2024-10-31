@@ -11,7 +11,7 @@ const HeaderPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="pe-3 sticky top-0 z-10 bg-main">
+    <div className="pe-3 sticky top-0 z-10 bg-main rounded-b-3xl overflow-hidden">
       <div className="flex flex-row justify-between items-center container mx-auto">
         <Image
           onClick={() => router.replace("/")}
@@ -24,7 +24,7 @@ const HeaderPage: React.FC = () => {
         <div className="hidden lg:flex flex-row items-center flex-wrap gap-3 ms-20 my-5 text-premium">
           {HeaderMenu?.map((item, i) => (
             <div
-              className={`${pathname === item.url_menu ? 'bg-premium text-white' : ''} cursor-pointer hover:bg-premium rounded-xl text-sm px-2 py-1 hover:text-main`}
+              className={`${pathname === item.url_menu ? 'bg-premium text-main' : ''} cursor-pointer hover:bg-premium rounded-xl text-sm px-2 py-1 hover:text-main`}
               key={i}
               onClick={() => router.push(item.url_menu)}
             >

@@ -89,97 +89,101 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
             />
           </Head>
           <PageContainer>
-            {data.image.length > 0 ? (
-              <div className="relative">
-                <div className="flex justify-center items-center w-full">
-                  <Image
-                    src={data.image[currentImageIndex]}
-                    width={1000}
-                    height={1000}
-                    alt="catalog-item"
-                    className="object-cover h-full md:w-1/2 aspect-square border border-premium"
-                  />
-                </div>
-                {!data.stock && (
-                  <div className="p-3 w-fit font-semibold text-lg rounded-2xl absolute bg-gray-800 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    STOCK OUT
+            <div className="grid grid-cols-1 md:grid-cols-2 my-10">
+              <div>
+                {data.image.length > 0 ? (
+                  <div className="relative mx-auto container">
+                    <div className="flex justify-center items-center w-full">
+                      <Image
+                        src={data.image[currentImageIndex]}
+                        width={1000}
+                        height={1000}
+                        alt="catalog-item"
+                        className="object-cover h-full md:w-3/4 aspect-square border border-premium"
+                      />
+                    </div>
+                    {!data.stock && (
+                      <div className="p-3 w-fit font-semibold text-lg rounded-2xl absolute bg-gray-800 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        STOCK OUT
+                      </div>
+                    )}
+                    <div className="flex justify-center mt-2">
+                      {data.image.map((img, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleImageSwap(index)}
+                          className={`w-12 h-12 overflow-hidden border-4 rounded-full m-1 ${
+                            currentImageIndex === index
+                              ? "border-premium"
+                              : "border-white"
+                          }`}
+                        >
+                          <Image
+                            src={img}
+                            width={40}
+                            height={40}
+                            alt={`thumbnail-${index}`}
+                            className="object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center aspect-square bg-[#e0e0e0] border border-premium">
+                    <div className="text-gray-500 text-center">
+                      No Image Available
+                    </div>
                   </div>
                 )}
-                <div className="flex justify-center mt-2">
-                  {data.image.map((img, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleImageSwap(index)}
-                      className={`w-12 h-12 overflow-hidden border-4 rounded-full m-1 ${
-                        currentImageIndex === index
-                          ? "border-premium"
-                          : "border-white"
-                      }`}
-                    >
-                      <Image
-                        src={img}
-                        width={40}
-                        height={40}
-                        alt={`thumbnail-${index}`}
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
               </div>
-            ) : (
-              <div className="h-full w-full flex items-center justify-center aspect-square bg-[#e0e0e0] border border-premium">
-                <div className="text-gray-500 text-center">
-                  No Image Available
-                </div>
-              </div>
-            )}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">
-              <div className="col-span-1">
-                <div
-                  className={`${
-                    data.disc > 0 ? "flex" : "hidden"
-                  } items-center gap-2`}
-                >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 md:mt-0 gap-5 mx-auto container px-5 md:pe-10">
+                <div className="md:col-span-3 lg:col-span-2">
                   <div
                     className={`${
-                      data.disc > 0 ? "line-through" : ""
-                    } text-base`}
+                      data.disc > 0 ? "flex" : "hidden"
+                    } items-center gap-2`}
                   >
-                    {data.price.toLocaleString("id-ID", {
+                    <div
+                      className={`${
+                        data.disc > 0 ? "line-through" : ""
+                      } text-base`}
+                    >
+                      {data.price.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                        minimumFractionDigits: 0,
+                      })}
+                    </div>
+                    <div className="bg-red-400 px-2 w-fit py-1 text-xs rounded-xl font-semibold">
+                      Disc {((data.disc / data.price) * 100).toFixed(0)}%
+                    </div>
+                  </div>
+                  <div className="font-bold text-2xl">
+                    {(data.price - data.disc).toLocaleString("id-ID", {
                       style: "currency",
                       currency: "IDR",
                       minimumFractionDigits: 0,
                     })}
                   </div>
-                  <div className="bg-red-400 px-2 py-1 text-xs rounded-xl font-semibold">
-                    Disc {((data.disc / data.price) * 100).toFixed(0)}%
+                </div>
+                <div className="col-span-1 md:col-span-2 xl:col-span-1 flex items-center justify-center md:justify-end">
+                  <div
+                    className="font-bold px-3 py-2 rounded-2xl bg-premium w-10/12 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300"
+                    onClick={() => handleOrderClick(data.product)}
+                  >
+                    CHECKOUT
                   </div>
                 </div>
-                <div className="font-bold text-2xl">
-                  {(data.price - data.disc).toLocaleString("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                    minimumFractionDigits: 0,
-                  })}
+                <div className="col-span-1 md:col-span-2 lg:col-span-3">
+                  <div className="font-semibold text-xl text-premium">
+                    {data.product}
+                  </div>
+                  <div
+                    className="text-sm mt-5 text-justify"
+                    dangerouslySetInnerHTML={{ __html: data.description }}
+                  />
                 </div>
-              </div>
-              <div className="col-span-1 lg:col-span-2 flex items-center justify-center md:justify-end">
-                <div
-                  className="font-bold px-3 py-2 rounded-2xl bg-premium w-10/12 md:w-1/2 lg:w-1/3 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300"
-                  onClick={() => handleOrderClick(data.product)}
-                >
-                  CHECKOUT
-                </div>
-              </div>
-              <div className="col-span-1 md:col-span-2 lg:col-span-3">
-                <div className="font-semibold text-xl text-premium">
-                  {data.product}
-                </div>
-                <div
-                  className="text-sm mt-5 text-justify"
-                  dangerouslySetInnerHTML={{ __html: data.description }}
-                />
               </div>
             </div>
           </PageContainer>

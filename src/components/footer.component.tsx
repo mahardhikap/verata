@@ -7,7 +7,7 @@ import {
 
 const FooterPage: React.FC = () => {
   return (
-    <div className="bg-premium px-5">
+    <div className="bg-premium px-5 rounded-t-3xl">
       <div className="text-main grid grid-cols-2 md:grid-cols-4 gap-5 py-32 container mx-auto">
         <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
           <div className="text-lg md:text-base font-bold">
@@ -18,7 +18,7 @@ const FooterPage: React.FC = () => {
           </div>
         </div>
         <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">
-          <div className="font-bold text-lg md:text-base">STORE</div>
+          <div className="font-bold text-lg md:text-base">SHOWROOM</div>
           <div>
             <div className="text-sm break-words">
               Km 8, Jl. Magelang No.5, Mlati Glondong, Sendangadi, Mlati, Sleman

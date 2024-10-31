@@ -89,17 +89,17 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
             />
           </Head>
           <PageContainer>
-            <div className="grid grid-cols-1 md:grid-cols-2 my-10">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 mx-auto container px-5">
+              <div className="col-span-1">
                 {data.image.length > 0 ? (
-                  <div className="relative mx-auto container">
-                    <div className="flex justify-center items-center w-full">
+                  <div className="relative">
+                    <div className="flex">
                       <Image
                         src={data.image[currentImageIndex]}
                         width={1000}
                         height={1000}
                         alt="catalog-item"
-                        className="object-cover h-full md:w-3/4 aspect-square border border-premium"
+                        className="object-cover w-full aspect-square border border-premium"
                       />
                     </div>
                     {!data.stock && (
@@ -107,27 +107,6 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
                         STOCK OUT
                       </div>
                     )}
-                    <div className="flex justify-center mt-2">
-                      {data.image.map((img, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleImageSwap(index)}
-                          className={`w-12 h-12 overflow-hidden border-4 rounded-full m-1 ${
-                            currentImageIndex === index
-                              ? "border-premium"
-                              : "border-white"
-                          }`}
-                        >
-                          <Image
-                            src={img}
-                            width={40}
-                            height={40}
-                            alt={`thumbnail-${index}`}
-                            className="object-cover"
-                          />
-                        </button>
-                      ))}
-                    </div>
                   </div>
                 ) : (
                   <div className="h-full w-full flex items-center justify-center aspect-square bg-[#e0e0e0] border border-premium">
@@ -137,52 +116,69 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
                   </div>
                 )}
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 md:mt-0 gap-5 mx-auto container px-5 md:pe-10">
-                <div className="md:col-span-3 lg:col-span-2">
+              <div className="col-span-1 w-full">
+                <div className="flex gap-2 mb-5">
+                  {data.image.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleImageSwap(index)}
+                      className={`w-12 h-12 overflow-hidden border-4 rounded-full ${
+                        currentImageIndex === index
+                          ? "border-premium"
+                          : "border-white"
+                      }`}
+                    >
+                      <Image
+                        src={img}
+                        width={40}
+                        height={40}
+                        alt={`thumbnail-${index}`}
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+                <div
+                  className={`${
+                    data.disc > 0 ? "flex" : "hidden"
+                  } items-center gap-2`}
+                >
                   <div
                     className={`${
-                      data.disc > 0 ? "flex" : "hidden"
-                    } items-center gap-2`}
+                      data.disc > 0 ? "line-through" : ""
+                    } text-base`}
                   >
-                    <div
-                      className={`${
-                        data.disc > 0 ? "line-through" : ""
-                      } text-base`}
-                    >
-                      {data.price.toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR",
-                        minimumFractionDigits: 0,
-                      })}
-                    </div>
-                    <div className="bg-red-400 px-2 w-fit py-1 text-xs rounded-xl font-semibold">
-                      Disc {((data.disc / data.price) * 100).toFixed(0)}%
-                    </div>
-                  </div>
-                  <div className="font-bold text-2xl">
-                    {(data.price - data.disc).toLocaleString("id-ID", {
+                    {data.price.toLocaleString("id-ID", {
                       style: "currency",
                       currency: "IDR",
                       minimumFractionDigits: 0,
                     })}
                   </div>
+                  <div className="bg-red-400 px-2 w-fit py-1 text-xs rounded-xl font-semibold">
+                    Disc {((data.disc / data.price) * 100).toFixed(0)}%
+                  </div>
                 </div>
-                <div className="col-span-1 md:col-span-2 xl:col-span-1 flex items-center justify-center md:justify-end">
+                <div className="font-bold text-2xl">
+                  {(data.price - data.disc).toLocaleString("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                  })}
+                </div>
+                <div className="font-semibold text-xl text-premium">
+                  {data.product}
+                </div>
+                <div
+                  className="text-sm mt-5 break-words"
+                  dangerouslySetInnerHTML={{ __html: data.description }}
+                />
+                <div className="flex justify-center">
                   <div
-                    className="font-bold px-3 py-2 rounded-2xl bg-premium w-10/12 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300"
+                    className="font-bold w-2/3 px-3 py-2 rounded-2xl bg-gradient-to-r from-premium via-white to-second mt-10 cursor-pointer text-center transform scale-100 hover:scale-110 transition-transform duration-300"
                     onClick={() => handleOrderClick(data.product)}
                   >
-                    CHECKOUT
+                    <span className="text-main">CHECKOUT</span>
                   </div>
-                </div>
-                <div className="col-span-1 md:col-span-2 lg:col-span-3">
-                  <div className="font-semibold text-xl text-premium">
-                    {data.product}
-                  </div>
-                  <div
-                    className="text-sm mt-5 text-justify"
-                    dangerouslySetInnerHTML={{ __html: data.description }}
-                  />
                 </div>
               </div>
             </div>

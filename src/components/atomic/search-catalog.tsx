@@ -9,8 +9,8 @@ const SearchCatalog: React.FC<SearchCatalogProps> = ({ onChange, onKeyDown }) =>
   return (
     <div className='w-full'>
       <input
-        className='py-1 ps-3 rounded-xl w-full bg-transparent border-2 border-premium outline-none placeholder-premium text-sm'
-        placeholder='search...'
+        className='py-1 ps-3 rounded-xl w-full bg-transparent border-2 font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent outline-none text-sm'
+        placeholder='Cari nama produk...'
         onChange={onChange}
         onKeyDown={onKeyDown}
       />

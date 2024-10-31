@@ -80,44 +80,56 @@ export default function Home() {
         <meta name="twitter:image" content="/verata.jpg" />
       </Head>
       <PageContainer>
-        <div className="bg-premium rounded-b-3xl pb-10 md:py-10">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-20 container mx-auto">
-            <div className="flex flex-col justify-center items-center md:items-end order-2 md:order-1 px-5">
-              <h1 className="text-main text-center md:text-right text-2xl xl:text-3xl w-full font-bold mb-5">
-                WALLPAPER DAN INTERIOR PREMIUM.
-              </h1>
-              <p className="text-main text-center md:text-right text-sm lg:text-base">
-                <strong>Verata Wallpaper dan Interior Jogja</strong> menawarkan
-                kualitas impor kebutuhan wallpaper dan interior untuk
-                memperindah ruang Anda.
-              </p>
-              <button className="px-3 py-2 border-2 border-main hover:bg-main text-main hover:text-white font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit flex items-center gap-2">
-                Selengkapnya <FaLongArrowAltRight />
-              </button>
-            </div>
-            <div className="relative flex justify-center lg:justify-end items-center mx-0 md:mx-5 order-1 md:order-2 aspect-square sm:aspect-video overflow-hidden">
-              <Image
-                src={HallVerata}
-                alt="hall-image"
-                width={10000}
-                height={10000}
-                className="object-cover aspect-square sm:aspect-video rounded-b-3xl md:rounded-3xl"
-              />
-              <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl md:rounded-3xl" />
-            </div>
+        <div className="grid md:grid-cols-2 container mx-auto gap-3 p-3">
+          <div className="flex flex-col justify-center items-start order-2 md:order-1 px-3 lg:px-20 bg-dark rounded-xl aspect-square">
+            <h1 className="text-left text-3xl xl:text-[40px] w-full font-bold mb-5 font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+              WALLPAPER DAN INTERIOR PREMIUM.
+            </h1>
+            <p className="text-left text-sm lg:text-base bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+              <strong>Verata Wallpaper dan Interior Jogja</strong> menawarkan
+              kualitas impor kebutuhan wallpaper dan interior untuk memperindah
+              ruang Anda.
+            </p>
+            <button className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit bg-second rounded-xl">
+              <span className="flex items-center gap-2 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                More <FaLongArrowAltRight className="text-white" />
+              </span>
+            </button>
+          </div>
+          <div className="relative flex justify-center lg:justify-end items-center order-1 md:order-2 aspect-square overflow-hidden">
+            <Image
+              src={HallVerata}
+              alt="hall-image"
+              width={10000}
+              height={10000}
+              className="object-cover aspect-square rounded-xl"
+            />
+            <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl md:rounded-3xl" />
           </div>
         </div>
-        <div className="container mx-auto">
-          <h2 className="font-bold text-2xl text-premium text-center mt-24">
-            CATALOG
-          </h2>
-          <p className="text-center text-sm mb-10">
-            Produk-produk yang tersedia di showroom kami.
-          </p>
+        <div className="container mx-auto my-5 px-3">
+          <div className="bg-dark rounded-xl p-5 mb-5 flex justify-between items-center gap-1">
+            <div>
+              <h2 className="font-bold text-2xl text-left font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                CATALOG
+              </h2>
+              <p className="text-left text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                Produk-produk yang tersedia di showroom kami.
+              </p>
+            </div>
+            <button
+              className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 w-fit flex items-center gap-2 bg-second rounded-xl"
+              onClick={() => router.push("/catalog")}
+            >
+              <span className="flex items-center gap-2 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                Products <FaLongArrowAltRight className="text-white" />
+              </span>
+            </button>
+          </div>
           {loading ? (
             <Loading className="my-40" color="border-t-premium" />
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-5 px-5">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-5">
               {products?.list?.map((item, i) => {
                 return (
                   <CatalogCardPage
@@ -133,55 +145,55 @@ export default function Home() {
               })}
             </div>
           )}
-          <div className="flex justify-center items-center mt-10">
-            <button
-              className="col-span-2 lg:col-span-3 text-center cursor-pointer transform scale-100 hover:scale-110 transition-transform duration-300 px-3 py-2 hover:bg-premium border-2 border-premium w-fit font-semibold mb-10 flex items-center gap-2 text-premium hover:text-white"
-              onClick={() => router.push("/catalog")}
-            >
-              Produk Lainnya <FaLongArrowAltRight />
-            </button>
-          </div>
         </div>
-        <div className="container mx-auto">
-          <h2 className="font-bold text-2xl text-premium text-center mt-10">
-            SERVICES
-          </h2>
-          <p className="text-center text-sm mb-10">
-            Kepuasan pelanggan menjadi prioritas kami.
-          </p>
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-20 md:px-5 mb-20">
-            <div className="relative">
+        <div className="container mx-auto px-3 my-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 rounded-xl">
+            <div className="relative aspect-square overflow-hidden col-span-1">
               <Image
                 src={OfficeVerata}
                 width={1000}
                 height={1000}
                 alt="office-verata"
-                className="md:rounded-3xl object-cover aspect-video"
+                className="rounded-xl object-cover aspect-square"
               />
-              <div className="absolute inset-0 bg-black opacity-15 md:rounded-3xl" />
+              <div className="absolute inset-0 bg-black opacity-15 md:rounded-xl" />
             </div>
-            <div className="flex flex-col gap-5 justify-center px-5 md:px-0 text-premium">
-              <div className="flex flex-col">
-                <h3 className="text-xl font-semibold">Consult</h3>
-                <p className="text-sm text-white">
-                  Tim kami siap memberikan preferensi untuk dekorasi yang anda
-                  butuhkan.
+            <div className="flex flex-col text-premium pt-5 md:pt-0 md:ps-5 aspect-square col-span-1">
+              <div className="mb-8 bg-dark p-5 rounded-xl h-fit">
+                <h2 className="font-bold text-2xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent text-left font-philosopher">
+                  SERVICES
+                </h2>
+                <p className="text-left text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                  Kepuasan pelanggan menjadi prioritas kami.
                 </p>
               </div>
-              <div className="flex flex-col">
-                <h3 className="text-xl text-premium font-semibold">
-                  Reparation
-                </h3>
-                <p className="text-sm text-white">
-                  Anda bisa mendapatkan reparasi dari tim kami.
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <h3 className="text-xl text-premium font-semibold">Delivery</h3>
-                <p className="text-sm text-white">
-                  Pengiriman dapat dilakukan di hari yang sama hingga sampai ke
-                  tempat tujuan.
-                </p>
+              <div className="flex flex-col gap-3 bg-dark p-5 rounded-xl flex-grow">
+                <div className="flex flex-col">
+                  <h3 className="text-lg lg:text-xl font-semibold bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                    Consult
+                  </h3>
+                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                    Tim kami siap memberikan preferensi untuk dekorasi yang anda
+                    butuhkan.
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
+                    Reparation
+                  </h3>
+                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                    Anda bisa mendapatkan reparasi dari tim kami.
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
+                    Delivery
+                  </h3>
+                  <p className="text-xs lg:text-sm bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
+                    Pengiriman dapat dilakukan di hari yang sama hingga sampai
+                    ke tempat tujuan.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

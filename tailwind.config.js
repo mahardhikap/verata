@@ -20,6 +20,8 @@ module.exports = withMT({
         second: "#5a4e3b",
         third: "#312b2b",
         main: "#201d1e",
+        dark: "#282727",
+        darkpremium: "#282727",
       },
       boxShadow: {
         premium: "0 2px 8px rgba(197, 172, 131, 0.5)",

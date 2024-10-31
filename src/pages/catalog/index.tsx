@@ -111,9 +111,9 @@ const CatalogPage: React.FC = () => {
               width={10000}
               height={10000}
               alt="verata-product"
-              className="w-full object-cover sm:h-60 rounded-b-3xl"
+              className="w-full object-cover sm:h-60"
             />
-            <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl" />
+            <div className="absolute inset-0 bg-black opacity-30" />
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-5 container mx-auto relative px-5">
             <div className="flex flex-col col-span-1 lg:col-span-2 w-full gap-5">
@@ -123,15 +123,15 @@ const CatalogPage: React.FC = () => {
                   setOpenFilterCategory(!openFilterCategory);
                 }}
               >
-                <div className="text-lg font-bold">Filter</div>
+                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">Filter</div>
                 {openFilterCategory ? (
-                  <IoIosArrowDropup size={30} />
+                  <IoIosArrowDropup size={30} className="text-white"/>
                 ) : (
-                  <IoIosArrowDropdown size={30} />
+                  <IoIosArrowDropdown size={30} className="text-white"/>
                 )}
               </div>
               <div
-                className={`w-full flex flex-row md:flex-col flex-wrap gap-2 p-3 rounded-xl bg-premium transition-transform duration-1000 ease-in-out ${
+                className={`w-full flex flex-row md:flex-col flex-wrap gap-2 rounded-xl transition-transform duration-1000 ease-in-out ${
                   openFilterCategory
                     ? "h-auto opacity-100 translate-y-0"
                     : "h-0 opacity-0 translate-y-[-30px]"
@@ -140,12 +140,12 @@ const CatalogPage: React.FC = () => {
                 {category?.map((item, i) => {
                   return (
                     <div
-                      className="pe-3 bg-third md:bg-transparent rounded-2xl w-fit"
+                      className="pe-3 font-philosopher bg-gradient-to-r from-premium via-white to-second rounded-2xl"
                       key={i}
                     >
                       <Checkbox
                         label={
-                          <Typography className="text-white md:text-main text-xs p-0 m-0 md:font-semibold">
+                          <Typography className="text-main text-xs p-0 m-0 md:font-semibold">
                             {item.name}
                           </Typography>
                         }
@@ -153,7 +153,7 @@ const CatalogPage: React.FC = () => {
                         onChange={(e) =>
                           handleCategoryChange(item.name, e.target.checked)
                         }
-                        className="border-white md:border-main h-4 w-4 p-0 m-0"
+                        className="border-white h-4 w-4 p-0 m-0"
                       />
                     </div>
                   );
@@ -162,7 +162,7 @@ const CatalogPage: React.FC = () => {
             </div>
             <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
               <div className=" w-full flex justify-between items-center text-premium relative">
-                <div className="text-lg font-bold">List Products</div>
+                <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">List Products</div>
                 <div
                   onClick={() => {
                     setSelectedCategory(null);
@@ -180,7 +180,7 @@ const CatalogPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row items-center font-philosopher text-white">
                   {openFilterList ? (
                     <FaArrowUpAZ size={20} />
                   ) : (

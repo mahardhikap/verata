@@ -95,7 +95,7 @@ export default function Home() {
               kualitas impor kebutuhan wallpaper dan interior untuk memperindah
               ruang Anda.
             </p>
-            <button className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit bg-second rounded-xl">
+            <button className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit bg-second rounded-xl" onClick={()=>router.push('/about')}>
               <span className="flex items-center gap-2 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
                 More <FaLongArrowAltRight className="text-white" />
               </span>

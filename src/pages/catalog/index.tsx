@@ -105,7 +105,7 @@ const CatalogPage: React.FC = () => {
         </div>
       ) : (
         <PageContainer>
-          <div className="px-5 container mx-auto mb-10">
+          <div className="px-5 container mx-auto mb-5">
             <div className="relative rounded-xl overflow-hidden">
               <Image
                 src={Banner}
@@ -144,7 +144,7 @@ const CatalogPage: React.FC = () => {
                 {category?.map((item, i) => {
                   return (
                     <div
-                      className="pe-3 font-philosopher bg-gradient-to-r from-premium to-second rounded-2xl flex-grow"
+                      className="pe-3 font-philosopher bg-gradient-to-r from-premium to-second rounded-2xl flex-grow md:w-full"
                       key={i}
                     >
                       <Checkbox
@@ -225,7 +225,7 @@ const CatalogPage: React.FC = () => {
               )}
             </div>
           </div>
-          <div className="mt-10 mb-20 flex justify-center items-center">
+          <div className="mt-5 mb-20 flex justify-center items-center">
             <Pagination
               totalPage={products?.pagination?.totalPage || 1}
               pageNow={params.page}

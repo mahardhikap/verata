@@ -87,8 +87,6 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
                 "https://res.cloudinary.com/dxao06apr/image/upload/v1729950357/dont%20delete%20before%20check/ssyk2vjb7yyvi5bv7sfg.jpg"
               }
             />
-            <meta name="robots" content="index, follow"/>
-            <link rel="icon" type="image/x-icon" href="/public/favicon.ico"/>
           </Head>
           <PageContainer>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 mx-auto container px-5">

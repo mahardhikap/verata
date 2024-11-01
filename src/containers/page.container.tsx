@@ -13,8 +13,9 @@ const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="kI4jOP2_e_FRUWqoxsX_-zLexifelXHisFcN4Qehh6U" />
+        <meta name="robots" content="index, follow"/>
+        <link rel="icon" type="image/x-icon" href="/public/verata-icons.ico"/>
       </Head>
       <div className="font-poppins">
         <HeaderPage />

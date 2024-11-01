@@ -81,8 +81,6 @@ export default function Home() {
           content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda dengan koleksi produk kualitas impor."
         />
         <meta name="twitter:image" content="/verata.jpg" />
-        <meta name="robots" content="index, follow"/>
-        <link rel="icon" type="image/x-icon" href="/public/favicon.ico"/>
       </Head>
       <PageContainer>
         <div className="grid md:grid-cols-2 container mx-auto gap-3 p-3">

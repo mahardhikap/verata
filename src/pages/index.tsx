@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Verata Wallpaper Jogja</title>
+        <title>Verata Wallpaper dan Interior Jogja</title>
         <meta
           name="description"
           content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda."
@@ -81,6 +81,8 @@ export default function Home() {
           content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda dengan koleksi produk kualitas impor."
         />
         <meta name="twitter:image" content="/verata.jpg" />
+        <meta name="robots" content="index, follow"/>
+        <link rel="icon" type="image/x-icon" href="/public/favicon.ico"/>
       </Head>
       <PageContainer>
         <div className="grid md:grid-cols-2 container mx-auto gap-3 p-3">
@@ -99,13 +101,13 @@ export default function Home() {
               </span>
             </button>
           </div>
-          <div className="relative flex justify-center lg:justify-end items-center order-1 md:order-2 aspect-square overflow-hidden">
+          <div className="relative flex justify-center lg:justify-end items-center order-1 md:order-2 aspect-video md:aspect-square overflow-hidden">
             <Image
               src={HallVerata}
               alt="hall-image"
               width={10000}
               height={10000}
-              className="object-cover aspect-square rounded-xl"
+              className="object-cover aspect-video md:aspect-square rounded-xl"
             />
             <div className="absolute inset-0 bg-black opacity-15 rounded-b-3xl md:rounded-3xl" />
           </div>

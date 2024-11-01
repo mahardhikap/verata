@@ -66,7 +66,7 @@ const HeaderPage: React.FC = () => {
             {HeaderMenu?.map((item, i) => (
               <div
                 key={i}
-                className="cursor-pointer my-4"
+                className="cursor-pointer my-4 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold"
                 onClick={() => {
                   router.push(item.url_menu);
                   setIsMenuOpen(false);

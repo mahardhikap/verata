@@ -167,7 +167,7 @@ const CatalogPage: React.FC = () => {
             <div className="md:col-span-2 lg:col-span-5 flex flex-col w-full gap-5">
               <div className=" w-full flex justify-between items-center text-premium relative p-5 bg-dark rounded-xl gap-3">
                 <div className="text-lg font-bold font-philosopher bg-gradient-to-r from-premium to-white bg-clip-text text-transparent">
-                  Calalogs
+                  Catalogs
                 </div>
                 <div
                   onClick={() => {

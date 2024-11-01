@@ -32,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({
         </svg>
       </button>
 
-      <span className="text-white font-semibold">
+      <span className="bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
         Page <strong>{pageNow}</strong> of <strong>{totalPage}</strong>
       </span>
 

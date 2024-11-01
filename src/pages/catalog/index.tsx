@@ -225,7 +225,7 @@ const CatalogPage: React.FC = () => {
               )}
             </div>
           </div>
-          <div className="my-10 flex justify-center items-center">
+          <div className="mt-10 mb-20 flex justify-center items-center">
             <Pagination
               totalPage={products?.pagination?.totalPage || 1}
               pageNow={params.page}

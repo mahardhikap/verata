@@ -50,4 +50,5 @@ export interface ProductI {
   image: string[];
   stock: boolean;
   category_id: string;
+  created_at: string;
 }

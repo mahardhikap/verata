@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1" xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">
     ${HeaderMenu.map(
       (item) => `
         <url>
@@ -44,6 +44,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <url>
           <loc>https://verata.vercel.app/catalog/${product.id}</loc>
           <lastmod>${new Date(product.created_at).toISOString()}</lastmod>
+          ${product.image?.map(img => `
+            <image:image>
+              <image:loc>${img}</image:loc>
+            </image:image>`).join("")}
         </url>`
       )
       .join("")}

@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Verata Catalogs</title>
+        <title>About Verata</title>
       </Head>
       <PageContainer>
         <div className="container mx-auto">

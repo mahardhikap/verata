@@ -1,5 +1,3 @@
-// pages/sitemap.xml.tsx
-
 import { GetServerSideProps } from "next";
 import { HeaderMenu } from "@/data/menu.data";
 import { listProductFilter } from "@/api/catalog.api";
@@ -28,31 +26,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     console.error("Error fetching products:", error);
   }
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1" xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">
-    ${HeaderMenu.map(
-      (item) => `
-        <url>
-          <loc>https://verata.vercel.app${item.url_menu}</loc>
-          <lastmod>${new Date().toISOString()}</lastmod>
-        </url>`
-    ).join("")}
-    
-    ${products
-      .map(
-        (product) => `
-        <url>
-          <loc>https://verata.vercel.app/catalog/${product.id}</loc>
-          <lastmod>${new Date(product.created_at).toISOString()}</lastmod>
-          ${product.image?.map(img => `
-            <image:image>
-              <image:loc>${img}</image:loc>
-            </image:image>`).join("")}
-        </url>`
-      )
-      .join("")}
-  </urlset>`;
-
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image">${HeaderMenu.map((item) => `<url><loc>https://verata.vercel.app${item.url_menu}</loc><lastmod>${new Date().toISOString()}</lastmod></url>`).join("")}${products.map((product) => `<url><loc>https://verata.vercel.app/catalog/${product.id}</loc><lastmod>${new Date(product.created_at).toISOString()}</lastmod>${product.image?.map((img) =>`<image:image><image:loc>${img}</image:loc></image:image>`).join("")}</url>`).join("")}</urlset>`;
+  
   res.write(xml);
   res.end();
 

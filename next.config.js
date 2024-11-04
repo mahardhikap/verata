@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["picsum.photos", "fastly.picsum.photos", "asset.codefreaks.web.id"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'asset.codefreaks.web.id',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

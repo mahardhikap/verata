@@ -18,6 +18,7 @@ import { CategoryListI } from "@/interfaces/category.interface";
 import Loading from "@/components/atomic/loading";
 import Banner from "../../assets/images/verata-room.jpg";
 import Image from "next/image";
+import Head from "next/head";
 
 const CatalogPage: React.FC = () => {
   const [openFilterCategory, setOpenFilterCategory] = useState<boolean>(true);
@@ -104,6 +105,10 @@ const CatalogPage: React.FC = () => {
           <Loading className="py-10" color="border-t-premium" />
         </div>
       ) : (
+        <>
+        <Head>
+          <title>Verata Catalogs</title>
+        </Head>
         <PageContainer>
           <div className="px-5 container mx-auto mb-5">
             <div className="relative rounded-xl overflow-hidden">
@@ -233,6 +238,7 @@ const CatalogPage: React.FC = () => {
             />
           </div>
         </PageContainer>
+        </>
       )}
     </>
   );

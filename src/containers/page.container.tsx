@@ -13,15 +13,21 @@ const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <meta name="google-site-verification" content="kI4jOP2_e_FRUWqoxsX_-zLexifelXHisFcN4Qehh6U" />
-        <meta name="robots" content="index, follow"/>
-        <link rel="icon" type="image/x-icon" href="/verata-icons.ico"/>
+        <meta
+          name="google-site-verification"
+          content="kI4jOP2_e_FRUWqoxsX_-zLexifelXHisFcN4Qehh6U"
+        />
+        <meta
+          name="Verata Wallpaper dan Interior Jogja"
+          content="Verata Wallpaper dan Interior Jogja adalah penyedia kebutuhan wallpaper dan interior Anda."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" type="image/png" href="/verata_fav_icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="font-poppins">
         <HeaderPage />
-        <div className="min-h-screen text-white">
-          {children}
-        </div>
+        <div className="min-h-screen text-white">{children}</div>
         <FooterPage />
       </div>
     </>

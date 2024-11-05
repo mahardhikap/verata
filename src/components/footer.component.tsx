@@ -15,8 +15,6 @@ const FooterPage: React.FC = () => {
             Verata Wallpaper dan Interior Jogja menawarkan kualitas impor
             kebutuhan wallpaper dan interior untuk memperindah ruang Anda.
           </div>
-        </div>
-        <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">
           <div className="font-bold text-lg md:text-base">SHOWROOM</div>
           <div>
             <div className="text-sm break-words">
@@ -60,9 +58,52 @@ const FooterPage: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="h-full flex flex-col gap-2 col-span-2 md:col-span-1">
+          {/* <!-- Additional external resources --> */}
+          <div className="font-bold text-lg md:text-base">USEFUL RESOURCES</div>
+          <ul className="list-disc pl-5 text-sm">
+            <li>
+              <a
+                href="https://jogjabagus.id/business/verata-gordyn"
+                target="_blank"
+              >
+                Jogja Bagus - Verata Gordyn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.krjogja.com/yogyakarta/1242502918/toko-verata-gordyn-dan-wallpaper-sediakan-produk-berkualitas-up-to-date"
+                target="_blank"
+              >
+                KR Jogja - Toko Verata Gordyn dan Wallpaper Sediakan Produk
+                Berkualitas Up To Date
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://bkppkutim.com/verata-wallpaper-jogja-gorden-jogja-vinyl-jogja---toko-interior-jogja-6057787010670704431/#google_vignette"
+                target="_blank"
+              >
+                Local Services Business - Verata Wallpaper Jogja/Gorden Jogja/Vinyl Jogja - Toko Interior Jogja
+              </a>
+            </li>
+            <li>
+              <a href="https://www.solomediabisnis.com/5-rekomendasi-toko-gorden-di-sleman/" target="_blank">
+                Solo Media Bisnis – 5 Rekomendasi Toko Gorden di Sleman
+              </a>
+            </li>
+            <li>
+              <a href="https://jogja.tribunnews.com/2020/07/06/verata-wallpaper-gordyn-kini-makin-luas-dan-lengkap-banyak-pilihandesain-kekinian" target="_blank">
+                Tribunnews - Verata Wallpaper & Gordyn Kini Makin Luas dan Lengkap Banyak Pilihan Desain Kekinian
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="flex justify-center text-sm items-center py-5 font-medium">
-        <span>&#169; 2024 by <strong>Verata</strong>. All Rights Reserved</span>
+        <span>
+          &#169; 2024 by <strong>Verata</strong>. All Rights Reserved
+        </span>
       </div>
     </div>
   );

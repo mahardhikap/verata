@@ -1,6 +1,5 @@
 import React from "react";
 import PageContainer from "@/containers/page.container";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { detailProduct } from "@/api/catalog.api";
 import { ProductI } from "@/interfaces/catalog-card.interface";
@@ -8,6 +7,7 @@ import { toast } from "react-toastify";
 import Head from "next/head";
 import { truncateText } from "@/utils/truncate-text";
 import Loading from "@/components/atomic/loading";
+import SchemaOrg from "@/components/atomic/schema";
 
 const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
@@ -22,6 +22,33 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
 
   const handleImageSwap = (index: number) => {
     setCurrentImageIndex(index);
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Wallpaper dan Interior Premium",
+    description:
+      "Verata Wallpaper dan Interior Jogja menawarkan kualitas impor kebutuhan wallpaper dan interior untuk memperindah ruang Anda.",
+    brand: {
+      "@type": "Brand",
+      name: data.product,
+    },
+    category: "Wallpaper dan Interior",
+    image: data.image,
+    url: `https://verata.vercel.app/catalog/${data.id}`,
+    offers: {
+      "@type": "Offer",
+      url: `https://verata.vercel.app/catalog/${data.id}`,
+      priceCurrency: data.price,
+      price: data.product,
+      seller: {
+        "@type": "Organization",
+        name: "Verata Wallpaper dan Interior Jogja",
+        url: "https://verata.vercel.app",
+        logo: "https://res.cloudinary.com/dxao06apr/image/upload/v1730787532/logo-dont-delete/c4khf01i9695rvci0ngs.png",
+      },
+    },
   };
 
   return (
@@ -88,6 +115,7 @@ const DetailCatalog: React.FC<{ data: ProductI }> = ({ data }) => {
               }
             />
           </Head>
+          <SchemaOrg schema={productSchema}/>
           <PageContainer>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 mx-auto container px-5">
               <div className="col-span-1">

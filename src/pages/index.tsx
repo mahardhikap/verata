@@ -14,6 +14,8 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { CgToolbox } from "react-icons/cg";
 import { MdDeliveryDining } from "react-icons/md";
+import SchemaOrg from "@/components/atomic/schema";
+import { indexSchema } from "@/data/schema.data";
 
 export default function Home() {
   const router = useRouter();
@@ -69,7 +71,7 @@ export default function Home() {
           property="og:image"
           content="https://res.cloudinary.com/dxao06apr/image/upload/v1729950357/dont%20delete%20before%20check/ssyk2vjb7yyvi5bv7sfg.jpg"
         />
-        <meta property="og:url" content={router.asPath} />
+        <meta property="og:url" content="https://verata.vercel.app" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -82,6 +84,7 @@ export default function Home() {
         />
         <meta name="twitter:image" content="/verata.jpg" />
       </Head>
+      <SchemaOrg schema={indexSchema}/>
       <PageContainer>
         <div className="grid md:grid-cols-2 container mx-auto gap-3 p-3">
           <div className="flex flex-col justify-center items-start order-2 md:order-1 px-3 lg:px-20 bg-dark rounded-xl aspect-square">
@@ -93,7 +96,10 @@ export default function Home() {
               kualitas impor kebutuhan wallpaper dan interior untuk memperindah
               ruang Anda.
             </p>
-            <button className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit bg-second rounded-xl" onClick={()=>router.push('/about')}>
+            <button
+              className="px-3 py-2 font-semibold transform scale-100 hover:scale-110 transition-transform duration-300 mt-10 w-fit bg-second rounded-xl"
+              onClick={() => router.push("/about")}
+            >
               <span className="flex items-center gap-2 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
                 More <FaLongArrowAltRight className="text-white" />
               </span>
@@ -158,7 +164,7 @@ export default function Home() {
               alt="office-verata"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-black opacity-50"/>
+            <div className="absolute inset-0 bg-black opacity-50" />
           </div>
           <div className="absolute inset-0 flex items-center justify-center container mx-auto px-6">
             <div className="flex flex-col text-premium aspect-video">
@@ -172,7 +178,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-center gap-3 bg-dark p-5 rounded-xl flex-grow">
                 <div className="grid grid-cols-5 gap-3">
-                  <RiCustomerService2Fill size={50} className="col-span-1"/>
+                  <RiCustomerService2Fill size={50} className="col-span-1" />
                   <div className="col-span-4">
                     <h3 className="text-lg lg:text-xl font-semibold bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent">
                       Consult
@@ -184,7 +190,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="grid grid-cols-5 gap-3">
-                  <CgToolbox size={50} className="col-span-1"/>
+                  <CgToolbox size={50} className="col-span-1" />
                   <div className="col-span-4">
                     <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
                       Reparation
@@ -195,7 +201,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="grid grid-cols-5 gap-3">
-                  <MdDeliveryDining size={50} className="col-span-1"/>
+                  <MdDeliveryDining size={50} className="col-span-1" />
                   <div className="col-span-4">
                     <h3 className="text-lg lg:text-xl bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold">
                       Delivery

@@ -4,10 +4,11 @@ import verata from "../assets/icons/verata.jpg";
 import { HeaderMenu } from "@/data/menu.data";
 import { useRouter } from "next/router";
 import { RiMenu3Line } from "react-icons/ri";
+import Link from "next/link";
 
 const HeaderPage: React.FC = () => {
   const router = useRouter();
-  const pathname = router.pathname
+  const pathname = router.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -23,13 +24,17 @@ const HeaderPage: React.FC = () => {
         />
         <div className="hidden md:flex flex-row flex-grow justify-center items-center flex-wrap gap-3 my-5 text-premium">
           {HeaderMenu?.map((item, i) => (
-            <div
-              className={`${pathname === item.url_menu ? 'bg-gradient-to-br text-white from-premium to-second' : ''} cursor-pointer hover:bg-gradient-to-br hover:from-premium hover:to-second rounded-xl text-base px-4 py-1 hover:text-main bg-dark font-medium`}
-              key={i}
-              onClick={() => router.push(item.url_menu)}
-            >
-              {item.label}
-            </div>
+            <Link key={i} href={item.url_menu}>
+              <div
+                className={`${
+                  pathname === item.url_menu
+                    ? "bg-gradient-to-br text-white from-premium to-second"
+                    : ""
+                } cursor-pointer hover:bg-gradient-to-br hover:from-premium hover:to-second rounded-xl text-base px-4 py-1 hover:text-main bg-dark font-medium`}
+              >
+                {item.label}
+              </div>
+            </Link>
           ))}
         </div>
         {/* Button to toggle menu */}
@@ -64,16 +69,16 @@ const HeaderPage: React.FC = () => {
               />
             </h2>
             {HeaderMenu?.map((item, i) => (
-              <div
-                key={i}
-                className="cursor-pointer my-4 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold"
-                onClick={() => {
-                  router.push(item.url_menu);
-                  setIsMenuOpen(false);
-                }}
-              >
-                {item.label}
-              </div>
+              <Link href={item.url_menu} key={i}>
+                <div
+                  className="cursor-pointer my-4 bg-gradient-to-r from-premium via-white to-second bg-clip-text text-transparent font-semibold"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -29,9 +29,9 @@ const FooterPage: React.FC = () => {
           <div className="font-bold text-lg md:text-base">INFORMATION</div>
           <div>
             <div className="text-sm">Products</div>
-            <div className="text-sm">Carrer</div>
+            <div className="text-sm">Careers</div>
             <div className="text-sm">FAQs</div>
-            <div className="text-sm">Law Certificate</div>
+            <div className="text-sm">Licensing Law</div>
           </div>
         </div>
         <div className="h-full flex flex-col gap-2">
